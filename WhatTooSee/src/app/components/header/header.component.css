@@ -1,0 +1,272 @@
+#menu{
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+#logo{
+    cursor: pointer;
+}
+
+@media screen and (min-width:1024px)
+{
+    #menu{
+        width: 1024px;
+    }
+
+    #menu-top{
+        width: 100%;
+        height: 75px;
+        background-color: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #logo{
+        width: 250px;
+        height: 65%;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 40px;
+    }
+
+    .list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+    
+    .link{
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+    }
+    
+    .link::before,
+    .link::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+    }
+    
+    .link::before{
+        top: -3px;
+        transform-origin: left;
+    }
+    
+      .link::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+    
+    .link:hover::before,
+    .link:hover::after,
+    .active::before,
+    .active::after{
+        transform: scaleX(1);
+    }
+    
+    .menu-toggle{
+        display: none;
+    }
+    
+    .second_list{
+        display: none;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px)
+{
+    #menu{
+        width: 100%;
+    }
+    
+    #menu-top{
+        width: 100%;
+        height: 75px;
+        background-color: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #logo{
+        width: 250px;
+        height: 65%;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 40px;
+    }
+    
+    .list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+    .link{
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+    }
+    
+    .link::before,
+    .link::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+    }
+    
+    .link::before{
+        top: -3px;
+        transform-origin: left;
+    }
+    
+    .link::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+    
+    .link:hover::before,
+    .link:hover::after,
+    .active::before,
+    .active::after{
+        transform: scaleX(1);
+    }
+}
+
+@media screen and (max-width:767px)
+{
+    #menu{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    #menu-top{
+        width: 100%;
+        height: 75px;
+        background-color: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #logo{
+        width: 300px;
+        height: 65%;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 5.2%;
+    }
+    
+    .list{
+        list-style: none;
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        white-space: nowrap;
+        margin-right: 5.2%;
+        gap: 40px;
+    }
+    
+    .link{
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 700;
+    }
+    
+    #ListMenu2 .link{
+        font-size: 2vw;
+    }
+    
+    .link::before,
+    .link::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+    }
+    
+    .link::before{
+        top: -3px;
+        transform-origin: left;
+    }
+    
+    .link::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+    
+    .link:hover::before,
+    .link:hover::after,
+    .active::before,
+    .active::after{
+          transform: scaleX(1);
+    }
+
+    .main_list {
+        width: 100%;
+        height: 0;
+        display: none;
+    }
+    
+    .second_list{
+        width: 25%;
+        justify-content: end;
+        position: fixed;
+        display: none;
+        font-size: 2ex;
+        color: #e2e2e2;
+        background-color: rgba(28,28,28,0.8);
+        margin-top: 75px;
+    }
+    
+    .show-menu {
+        display: block;
+    }
+    
+    .menu-toggle{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 3%;
+        height: 30%;
+        margin-right: 5.2%;
+    }
+    
+    .bar{
+        width: 100%;
+        height: 15%;
+        background-color: #333;
+        transition: 0.4s;
+    }
+}
