@@ -23,7 +23,6 @@ export class HeaderComponent implements AfterViewInit{
       for (const entry of entries) {
         const width = entry.contentRect.width;
         h = width / 13.65;
-        console.log('Calculated height:', h);
         this.renderer.setStyle(menuTop, 'height', `${h}px`);
         this.renderer.setStyle(secondList, 'margin-top', `${h}px`);
       }
