@@ -1,0 +1,680 @@
+body{
+    margin: 0px;
+    font-family: Raleway;
+    display: flex;
+    justify-content: center;
+    background-color: #e2e2e2;
+}
+
+::-webkit-scrollbar {
+    width: 8px; /* Cambia el ancho de la barra de desplazamiento en navegadores webkit (como Chrome y Safari) */
+    scrollbar-color: #e2e2e2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #aaaaaa; /* Cambia el color del pulgar de la barra de desplazamiento en navegadores webkit */
+    border-radius: 6px; /* Cambia el radio de las esquinas del pulgar en navegadores webkit */
+}
+
+::-webkit-scrollbar-track{
+    background-color: #e2e2e2;
+}
+
+#Menu{
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+#logo{
+    cursor: pointer;
+}
+
+.card{
+    cursor: pointer;
+}
+
+@media screen and (min-width:1024px) 
+{
+    ::-webkit-scrollbar {
+        width: 12px;
+        scrollbar-color: #e2e2e2;
+    }
+    
+    #Container{
+        width: 1024px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #Menu{
+        width: 1024px;
+    }
+    
+    #Menu-top{
+        width: 100%;
+        height: 75px;
+        background-color: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #Logo{
+        width: 250px;
+        height: 65%;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 40px;
+    }
+    
+    .list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+    
+    .link{
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+    }
+    
+    .link::before,
+    .link::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+    }
+    
+    .link::before{
+        top: -3px;
+        transform-origin: left;
+    }
+    
+      .link::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+    
+    .link:hover::before,
+    .link:hover::after,
+    .active::before,
+    .active::after{
+        transform: scaleX(1);
+    }
+    
+    .menu-toggle{
+        display: none;
+    }
+    
+    .second_list{
+        display: none;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para el contenido*/
+    
+    #page-Container{
+        width: 100%;
+        background-color: #e2e2e2;
+        margin-top: 5px;
+    }
+    
+    #title-Container{
+        font-family: Urbanist;
+        font-size: 4rem;
+        font-weight: bolder;
+        padding-left: 20px;
+        color: #0d1821 ;
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+    }
+    
+    #search-Label{
+        margin: 20px 0 7px 20px;
+    }
+    
+    #search-Container{
+        width: 100%;
+        height: 35px;
+        display: flex;
+        justify-content: space-between;
+        /*background-color: rgba(0, 255, 0, 0.3);*/
+    }
+    
+    .searchBox{
+        width: 40%;
+        display: flex;
+    }
+    
+    .box{
+        height: 30px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 2.5px 20px;
+        margin: 0 0 0 20px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .box:hover input{
+        width: 350px;
+    }
+    
+    .box input{
+        width: 0;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        transition: 0.8s;
+        background: transparent;
+    }
+    
+    .box a .fas{
+        color: #1c1c1c;
+        font-size: 18px;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: #0d1821;
+        margin: 20px 0px 20px 0px;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para perfiles*/
+    
+    #profile-Container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5%;
+    }
+    
+    .card {
+        width: 18%;
+        height: 200px;
+        background-image: linear-gradient(144deg, #1c1c1c, #282828, #333333 50%, #404040, #4c4c4c);
+        border: none;
+        border-radius: 10px;
+        font-family: inherit;
+        margin-bottom: 1%;
+    }
+      
+    .card span {
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        display: block;
+        padding-top: 10%;
+        font-size: 1.3em;
+    }
+      
+    .card .img {
+        width: 50%;
+        height: 45%;
+        background: #e8e8e8;
+        border-radius: 100%;
+        margin: auto;
+        margin-top: 12%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) 
+{
+    ::-webkit-scrollbar {
+        width: 8px;
+        scrollbar-color: #e2e2e2;
+    }
+    
+    #Container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para el navbar*/
+    
+    #Menu{
+        width: 100%;
+    }
+    
+    #Menu-top{
+        width: 100%;
+        height: 75px;
+        background-color: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #Logo{
+        width: 250px;
+        height: 65%;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 40px;
+    }
+    
+    .list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+    .link{
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+    }
+    
+    .link::before,
+    .link::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+    }
+    
+    .link::before{
+        top: -3px;
+        transform-origin: left;
+    }
+    
+    .link::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+    
+    .link:hover::before,
+    .link:hover::after,
+    .active::before,
+    .active::after{
+        transform: scaleX(1);
+    }
+    
+    .menu-toggle{
+        display: none;
+    }
+    
+    .second_list{
+        display: none;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para el contenido*/
+    
+    #page-Container{
+        width: 100%;
+        background-color: #e2e2e2;
+        margin-top: 75px;
+    }
+    
+    #title-Container{
+        font-family: Urbanist;
+        font-size: 4rem;
+        font-weight: bolder;
+        padding-left: 20px;
+        color: #0d1821 ;
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+    }
+    
+    #search-Label{
+        margin: 20px 0 7px 20px;
+    }
+    
+    #search-Container{
+        width: 100%;
+        height: 35px;
+        display: flex;
+        justify-content: space-between;
+        /*background-color: rgba(0, 255, 0, 0.3);*/
+    }
+    
+    .searchBox{
+        width: 20%;
+        display: flex;
+    }
+    
+    .box{
+        height: 30px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 2.5px 20px;
+        margin: 0 0 0 20px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .box:hover input{
+        width: 310px;
+    }
+    
+    .box input{
+        width: 0;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        transition: 0.8s;
+        background: transparent;
+    }
+    
+    .box a .fas{
+        color: #1c1c1c;
+        font-size: 18px;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: #0d1821;
+        margin: 20px 0px 20px 0px;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para perfiles*/
+    
+    #profile-Container{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5%;
+    }
+    
+    .card {
+        width: 18%;
+        height: 150px;
+        background-image: linear-gradient(144deg, #1c1c1c, #282828, #333333 50%, #404040, #4c4c4c);
+        border: none;
+        border-radius: 10px;
+        font-family: inherit;
+        margin-bottom: 2%;
+    }
+      
+    .card span {
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        display: block;
+        padding-top: 10%;
+        font-size: 2vw;
+    }
+      
+    .card .img {
+        width: 50%;
+        height: 45%;
+        background: #e8e8e8;
+        border-radius: 100%;
+        margin: auto;
+        margin-top: 12%;
+    }
+}
+
+@media screen and (max-width:768px) 
+{
+    ::-webkit-scrollbar {
+        width: 5px; 
+        scrollbar-color: #e2e2e2;
+    }
+    
+    #Container{
+        width: 100%;
+        height: 100%;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para el navbar*/
+    
+    #Menu{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    #Menu-top{
+        width: 100%;
+        height: 75px;
+        background-color: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #Logo{
+        width: 300px;
+        height: 65%;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 5.2%;
+    }
+    
+    .list{
+        list-style: none;
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        justify-content: space-between;
+        white-space: nowrap;
+        margin-right: 5.2%;
+        gap: 40px;
+    }
+    
+    .link{
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #e2e2e2;
+        font-weight: 700;
+    }
+    
+    #ListMenu2 .link{
+        font-size: 2vw;
+    }
+    
+    .link::before,
+    .link::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e2e2e2;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+    }
+    
+    .link::before{
+        top: -3px;
+        transform-origin: left;
+    }
+    
+    .link::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+    
+    .link:hover::before,
+    .link:hover::after,
+    .active::before,
+    .active::after{
+          transform: scaleX(1);
+    }
+    
+    .main_list {
+        width: 100%;
+        height: 0;
+        display: none;
+    }
+    
+    .second_list{
+        width: 25%;
+        justify-content: end;
+        position: fixed;
+        display: none;
+        font-size: 2ex;
+        color: #e2e2e2;
+        background-color: rgba(28,28,28,0.8);
+        margin-top: 75px;
+    }
+    
+    .show-menu {
+        display: block;
+    }
+    
+    .menu-toggle{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 3%;
+        height: 30%;
+        margin-right: 5.2%;
+    }
+    
+    .bar{
+        width: 100%;
+        height: 15%;
+        background-color: #333;
+        transition: 0.4s;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para el contenido*/
+    
+    #page-Container{
+        width: 100%;
+        background-color: #e2e2e2;
+        margin-top: 75px;
+    }
+    
+    #title-Container{
+        font-family: Urbanist;
+        font-size: 8vw;
+        font-weight: bolder;
+        padding-left: 2%;
+        color: #0d1821 ;
+    }
+    
+    #search-Label{
+        margin: 2% 0 .7% 2%;
+        font-size: 2vw;
+    }
+    
+    #search-Container{
+        width: 100%;
+        margin: 0 0 0 2%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .searchBox{
+        width: 20%;
+        display: flex;
+    }
+    
+    .box{
+        height: 30px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 10%;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .box:hover input{
+        width: 200px;
+    }
+    
+    .box input{
+        width: 0;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        transition: 0.8s;
+        background: transparent;
+    }
+    
+    .box a .fas{
+        color: #1c1c1c;
+        font-size: 2.1vw;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: #0d1821;
+        margin: 2% 0px 2% 0px;
+    }
+    
+    /************************************************************************************************************/
+    /*Estilos para perfiles*/
+    
+    #profile-Container{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5%;
+    }
+    
+    .card {
+        width: 18%;
+        height: 200px;
+        background-image: linear-gradient(144deg, #1c1c1c, #282828, #333333 50%, #404040, #4c4c4c);
+        border: none;
+        border-radius: 7%;
+        font-family: inherit;
+        margin-bottom: 2%;
+    }
+      
+    .card span {
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        display: block;
+        padding-top: 10%;
+        font-size: 2vw;
+    }
+      
+    .card .img {
+        width: 50%;
+        height: 45%;
+        background: #e8e8e8;
+        border-radius: 100%;
+        margin: auto;
+        margin-top: 12%;
+    }
+}

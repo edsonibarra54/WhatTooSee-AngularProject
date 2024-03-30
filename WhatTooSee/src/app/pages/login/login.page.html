@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="subcontainer">
+    <div class="container" id="container">
+        <div [@action_up]="userAction" class="form-Container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <input type="text" placeholder="User">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div [@action_in]="userAction" class="form-Container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button >Sign In</button>
+            </form>
+        </div>
+        <div [@toggle_c]="userAction" class="toggle-Container">
+            <div [@toggle]="userAction"class="toggle">
+                <div [@toggle_r]="userAction"class="toggle-Panel ">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details o usel all of site features</p>
+                    <button class="hidden" id="register" (click)="toggleAnimation()">Sign Up</button>
+                </div>
+                <div [@toggle_l]="userAction" class="toggle-Panel ">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all site features</p>
+                    <button class="hidden" id="register" (click)="toggleAnimation()">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
