@@ -8,10 +8,17 @@
                 <a routerLink="./login" class="link">Iniciar Sesion</a>
             </div>
         </div>
-        <div class="menu-toggle">
+        <div class="menu-toggle" (click)="toggleSecondList()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
+        </div>
+    </div>
+    <div id="secondListDiv">
+        <div class="List" id="ListMenu2">
+            <a routerLink="./production" class="link">Peliculas/Series</a>
+            <a routerLink="./community" class="link">Comunidad</a>
+            <a routerLink="./login" class="link">Iniciar Sesion</a>
         </div>
     </div>
 </div>

@@ -80,12 +80,14 @@
         display: none;
     }
     
-    .second_list{
+    #secondListDiv{
         display: none;
     }
 }
 
-@media screen and (min-width:768px) and (max-width:1023px)
+/************************************************************************************************************/
+
+@media screen and (min-width:768px) and (max-width:1024px)
 {
     #menu{
         width: 100%;
@@ -153,9 +155,19 @@
     .active::after{
         transform: scaleX(1);
     }
+
+    .menu-toggle{
+        display: none;
+    }
+    
+    #secondListDiv{
+        display: none;
+    }
 }
 
-@media screen and (max-width:767px)
+/************************************************************************************************************/
+
+@media screen and (max-width:768px)
 {
     #menu{
         width: 100%;
@@ -197,6 +209,7 @@
         text-decoration: none;
         color: #fff;
         font-weight: 700;
+        margin-top: 20%;
     }
     
     #ListMenu2 .link{
@@ -238,19 +251,22 @@
         display: none;
     }
     
-    .second_list{
-        width: 25%;
+    #secondListDiv{
+        width: 20%;
         justify-content: end;
         position: fixed;
         display: none;
         font-size: 2ex;
         color: #e2e2e2;
         background-color: rgba(28,28,28,0.8);
-        margin-top: 75px;
+        padding-bottom: 3%;
     }
     
-    .show-menu {
-        display: block;
+    #ListMenu2{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-right: 8%;
     }
     
     .menu-toggle{
