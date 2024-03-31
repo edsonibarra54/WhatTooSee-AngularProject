@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2  } from '@angular/core';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -45,12 +47,47 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
   ]
 })
 
-export class LoginPage {
+export class LoginPage implements OnInit, OnDestroy {
   userAction: string = "login";
 
-  constructor() {}
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   toggleAnimation(): void {
     this.userAction = this.userAction === "login" ? "signup" : "login";
+  }
+
+  ngOnInit(): void {
+
+    const logoDiv = this.renderer.createElement('div');
+    this.renderer.setAttribute(logoDiv, 'id', 'login-logo');
+    this.renderer.appendChild(document.body, logoDiv);
+    logoDiv.addEventListener('click', this.navigateToAnotherRoute.bind(this));
+
+    this.renderer.addClass(document.body, 'login-page');
+
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+      )
+      .subscribe((event: NavigationEnd) => {
+        if (event.urlAfterRedirects === '/login') {
+          this.renderer.addClass(document.body, 'login-page');
+        } else {
+          this.renderer.removeClass(document.body, 'login-page');
+        }
+      });
+    
+  }
+
+  ngOnDestroy(): void {
+
+    const logoDiv = document.getElementById('login-logo');
+    if (logoDiv) {
+      logoDiv.remove();
+    }
+  }
+
+  navigateToAnotherRoute(): void {
+    this.router.navigate(['/home']);
   }
 }
