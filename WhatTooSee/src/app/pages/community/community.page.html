@@ -1,45 +1,19 @@
-<div id="page-Container">
-    <div id="title-Container">Community</div>
-    <div id="search-Label">Search for people</div>
-    <div id="search-Container">
-        <div class="searchBox">
-            <div class="box" id="box">
-                <input type="text" placeholder="Search...">
-                <a><i class="fas fa-search"></i></a>
-            </div>
+<div id="title-Container">Community</div>
+<div id="search-Label">Search for people</div>
+<div id="search-Container">
+    <div class="searchBox">
+        <div class="box" id="box">
+            <input type="text" placeholder="Search...">
+            <a><i class="fas fa-search"></i></a>
         </div>
     </div>
-    <div class="line"></div>
-    <div id="profile-Container">
-        <div class="card">
-            <div class="img">
-            </div>
-            <span> Person</span>
-        </div>
-        <div class="card">
-            <div class="img">
-            </div>
-            <span> Person</span>
-        </div>
-        <div class="card">
-            <div class="img">
-            </div>
-            <span> Person</span>
-        </div>
-        <div class="card">
-            <div class="img">
-            </div>
-            <span> Person</span>
-        </div>
-        <div class="card">
-            <div class="img">
-            </div>
-            <span> Person</span>
-        </div>
-        <div class="card">
-            <div class="img">
-            </div>
-            <span> Person</span>
-        </div>
-    </div>
+</div>
+<div class="line"></div>
+<div id="profile-Container">
+    <app-user-card [data]="userData"></app-user-card>
+    <app-user-card [data]="userData"></app-user-card>
+    <app-user-card [data]="userData"></app-user-card>
+    <app-user-card [data]="userData"></app-user-card>
+    <app-user-card [data]="userData"></app-user-card>
+    <app-user-card [data]="userData"></app-user-card>
 </div>

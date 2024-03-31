@@ -5,8 +5,21 @@ body{
     linear-gradient(to bottom, #e2e2e2, #c9d6ff 60%, #c9d6ff, #e2e2e2);
 }
 
+
 @media screen and (min-width:1024px) 
 {
+    #login-logo{
+        width: 250px;
+        height: 65px;
+        margin-left: -75%;
+        margin-top: 10px;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        cursor: pointer;
+    }
+
     *{
         margin: 0;
         padding: 0;
@@ -19,6 +32,7 @@ body{
         justify-content: center;
         flex-direction: column;
         height: 100vh;
+        background: -webkit-radial-gradient(top left, ellipse, #e2e2e2 0%, transparent), 
     }
     
     .container{
@@ -29,7 +43,8 @@ body{
         overflow: hidden;
         width: 768px;
         max-width: 100%;
-        max-height: 50%;
+        min-height: 400px;
+        max-height: 400px;
     }
     
     #logo{
@@ -164,6 +179,19 @@ body{
 
 @media screen and (min-width:768px) and (max-width:1023px) 
 {
+
+    #login-logo{
+        width: 250px;
+        height: 65px;
+        margin-left: -75%;
+        margin-top: 10px;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        cursor: pointer;
+    }
+
     *{
         margin: 0;
         padding: 0;
@@ -321,6 +349,18 @@ body{
 
 @media screen and (max-width:768px) 
 {
+    #login-logo{
+        width: 100px;
+        height: 25px;
+        margin-left: -75%;
+        margin-top: 10px;
+        background-image: url("../../../../img/W2SBlack.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        cursor: pointer;
+    }
+
     *{
         margin: 0;
         padding: 0;
