@@ -3,11 +3,13 @@ import { HomePage } from './pages/home/home.page';
 import { LoginPage } from './pages/login/login.page';
 import { ProductionPage } from './pages/production/production.page';
 import { CommunityPage } from './pages/community/community.page';
+import { MaterialPage } from './pages/material/material.page';
 
 export const routes: Routes = [ 
     { path: "", redirectTo: "home", pathMatch: "full" },
     { path: "home", component: HomePage },
     { path: "production", component: ProductionPage },
     { path: "community", component: CommunityPage },
-    { path: "login", component: LoginPage }
+    { path: "login", component: LoginPage },
+    { path: "material", component: MaterialPage }
 ];

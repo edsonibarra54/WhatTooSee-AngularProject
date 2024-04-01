@@ -1,0 +1,167 @@
+.profile-Container{
+    cursor: pointer;
+}
+
+@media screen and (min-width:1024px) {
+    .profile-Container{
+        width: 20%;
+        height: 90%;
+        border: 2px solid #e2e2e2;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text{
+        width: 65%;
+        height: 75%;
+        border: 2px solid #e2e2e2;
+        color: #fff;
+        border-radius: 20px;
+        padding: 2% 4%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    
+    .profile-Image {
+        width: 40%;
+        height: 35%;
+        background: #e8e8e8;
+        border-radius: 100%;
+        margin: 7.5%;
+    }
+    
+    .profile-Name {
+        width: 80%;
+        height: 23%;
+        color: #fff;
+        overflow-wrap: break-word;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .cal-Container {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+    
+    .cal-Container .fa-star {
+        color: gold;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .profile-Container{
+        width: 20%;
+        height: 90%;
+        border: .3vw solid #e2e2e2;
+        border-radius: 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text{
+        width: 65%;
+        height: 75%;
+        border: .3vw solid #e2e2e2;
+        color: #fff;
+        border-radius: 20px;
+        padding: 2% 4%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.55vw;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    
+    .profile-Image {
+        width: 40%;
+        height: 35%;
+        background: #e8e8e8;
+        border-radius: 100%;
+        margin: 7.5%;
+    }
+    
+    .profile-Name {
+        width: 80%;
+        height: 23%;
+        color: #fff;
+        overflow-wrap: break-word;
+        text-align: center;
+        overflow: hidden;
+        font-size: 1.55vw;
+    }
+    
+    .cal-Container {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+    
+    .cal-Container .fa-star {
+        font-size: 1.55vw;
+        color: gold;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .profile-Container{
+        width: 20%;
+        height: 90%;
+        border: .3vw solid #e2e2e2;
+        border-radius: 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text{
+        width: 65%;
+        height: 75%;
+        border: .3vw solid #e2e2e2;
+        color: #fff;
+        border-radius: 2vw;
+        padding: 2% 4%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.55vw;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    
+    .profile-Image {
+        width: 40%;
+        height: 35%;
+        background: #e8e8e8;
+        border-radius: 100%;
+        margin: 7.5%;
+    }
+    
+    .profile-Name {
+        width: 80%;
+        height: 23%;
+        color: #fff;
+        overflow-wrap: break-word;
+        text-align: center;
+        overflow: hidden;
+        font-size: 1.55vw;
+    }
+    
+    .cal-Container {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+    
+    .cal-Container .fa-star {
+        font-size: 1.55vw;
+        color: gold;
+    }
+}
