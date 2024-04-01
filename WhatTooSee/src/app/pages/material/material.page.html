@@ -1,0 +1,73 @@
+<div id="poster-Container">
+    <div id="id-Material">Id = 1000</div>
+    <div id="poster">
+        <img id="poster-Image" src="../../../assets/KillersOfTheFlowerMoon.jpg">
+    </div>
+    <div id="name-Container">
+        <div id="title">Killers of the flower moon</div>
+        <div class="line"></div>
+        <div id="cali-Container">
+            <i class="fas fa-star" id="star"></i>
+            <div id="calificacion">10</div>
+        </div>
+        <div class="line"></div>
+        <div class="text-Container">
+            <div class="charact">Genre:</div>
+            <div class="info" id="genre">Crime, Drama</div>
+        </div>
+        <div class="text-Container">
+            <div class="charact">Rating:</div>
+            <div class="info" id="rating">R</div>
+        </div>
+        <div class="text-Container">
+            <div class="charact">Director:</div>
+            <div class="info" id="director">Martin Scorsese</div>
+        </div>
+        <div class="text-Container">
+            <div class="charact">Writer:</div>
+            <div class="info" id="writer">Eric Roth, Martin Scorsese</div>
+        </div>
+        <div class="text-Container">
+            <div class="charact">Cast:</div>
+            <div class="info" id="cast">Leonardo DiCaprio, Robert De Niro, Jesse Plemons</div>
+        </div>
+        <div class="text-Container">
+            <div class="charact">Release Date:</div>
+            <div class="info" id="release">Oct 20, 2023</div>
+        </div>
+        <div class="text-Container">
+            <div class="charact">Runtime:</div>
+            <div class="info" id="runtime">3h 26m</div>
+        </div>
+    </div>
+</div>
+<div class="line"></div>
+<div id="subtitle">Commentaries</div>
+<div class="line"></div>
+<div id="addComment">
+    <div id="label">Add a comment. (500 characters max.)</div>
+    <div class="comment-Container">
+        <div class="text">
+            <textarea id="text-Comment" placeholder="Search..." maxlength="500"></textarea>
+        </div>
+    </div>
+    <div id="cal-Selector">
+        <div class="cal-Container" id="cal-Stars">
+            <i class="fas fa-star" (click)="selectStar($event)"></i>
+            <i class="fas fa-star" (click)="selectStar($event)"></i>
+            <i class="fas fa-star" (click)="selectStar($event)"></i>
+            <i class="fas fa-star" (click)="selectStar($event)"></i>
+            <i class="fas fa-star" (click)="selectStar($event)"></i>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+</div>
+<div class="line"></div>
+<div id="commentaries-Container">
+    <app-commentary-box class="comment-Container"></app-commentary-box>
+    <app-commentary-box class="comment-Container"></app-commentary-box>
+    <app-commentary-box class="comment-Container"></app-commentary-box>
+    <app-commentary-box class="comment-Container"></app-commentary-box>
+    <app-commentary-box class="comment-Container"></app-commentary-box>
+    <app-commentary-box class="comment-Container"></app-commentary-box>
+</div>
