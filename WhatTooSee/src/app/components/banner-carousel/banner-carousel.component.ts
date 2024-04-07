@@ -9,9 +9,13 @@ import Splide from '@splidejs/splide';
   styleUrl: './banner-carousel.component.css'
 })
 export class BannerCarouselComponent {
+  splideInstances: Splide[] = [];
+
   constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef ) {}
 
   ngAfterViewInit(): void {
+    this.initializeSplide();
+
     const banner = this.elRef.nativeElement.querySelector('#Banner');
     const splideContainer = this.elRef.nativeElement.querySelector('#splideContainer');
     let h: number;
@@ -28,9 +32,10 @@ export class BannerCarouselComponent {
     observerMenuTop.observe(banner);
   }
 
-  ngOnInit(): void {
-    document.addEventListener('DOMContentLoaded', function () {
-      const splide1 = new Splide('.splide', {
+  initializeSplide(): void {
+    const splideElement = this.elRef.nativeElement.querySelector('.splide');
+    if (splideElement) {
+      const splideInstance = new Splide(splideElement, {
         type: 'loop',
         drag: 'free',
         snap: true,
@@ -40,16 +45,25 @@ export class BannerCarouselComponent {
       const progressContainer = document.querySelector('.my-carousel-progress');
       const bar: HTMLElement | null = progressContainer ? progressContainer.querySelector('.my-carousel-progress-bar') as HTMLElement : null;
 
-      splide1.on('mounted move', () => {
-        const end = splide1.Components.Controller.getEnd() + 1;
-        const rate = Math.min((splide1.index + 1) / end, 1);
+      splideInstance.on('mounted move', () => {
+        const end = splideInstance.Components.Controller.getEnd() + 1;
+        const rate = Math.min((splideInstance.index + 1) / end, 1);
 
         if (bar) {
           bar.style.width = String(100 * rate) + '%';
         }
       });
 
-      splide1.mount();
+      splideInstance.mount();
+      this.splideInstances.push(splideInstance);
+    }
+  }
+
+  destroySplide(): void {
+    this.splideInstances.forEach(instance => {
+      instance.destroy();
     });
+
+    this.splideInstances = [];
   }
 }

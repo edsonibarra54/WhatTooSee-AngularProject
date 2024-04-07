@@ -11,9 +11,13 @@ import Splide from '@splidejs/splide';
 export class PosterCarouselComponent {
   @Input() carouselId: string = 'movieSlider';
 
+  splideInstances: Splide[] = [];
+
   constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef ) {}
 
   ngAfterViewInit(): void {
+    this.initializeSplide();
+
     const carousel = this.elRef.nativeElement.querySelector('#posterCarouselBase');
     const splideContainer = this.elRef.nativeElement.querySelector('#splideContainer');
     let h: number;
@@ -30,48 +34,31 @@ export class PosterCarouselComponent {
     observerCarousel.observe(carousel);
   }
 
-  ngOnInit(): void {
-    document.addEventListener('DOMContentLoaded', function () {
-      const splide1 = new Splide('#movieSlider', {
-        type: 'loop',
-        perPage: 3,
-        perMove: 1,
-        snap: true,
-        autoplay: true,
-      });
-
-      splide1.mount();
-
-      const splide2 = new Splide('#movieSlider2', {
-        type: 'loop',
-        perPage: 3,
-        perMove: 1,
-        snap: true,
-        autoplay: true,
-      });
-
-      splide2.mount();
-
-      const splide3 = new Splide('#movieSlider3', {
-        type: 'loop',
-        perPage: 3,
-        perMove: 1,
-        snap: true,
-        autoplay: true,
-      });
-
-      splide3.mount();
-
-      const splide4 = new Splide('#movieSlider4', {
-        type: 'loop',
-        perPage: 3,
-        perMove: 1,
-        snap: true,
-        autoplay: true,
-      });
-
-      splide4.mount();
-    });
+  ngOnDestroy(): void {
+    this.destroySplide();
   }
 
+  initializeSplide(): void {
+    const splideElement = this.elRef.nativeElement.querySelector('.splide');
+    if (splideElement) {
+      const splideInstance = new Splide(splideElement, {
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        snap: true,
+        autoplay: true,
+      });
+
+      splideInstance.mount();
+      this.splideInstances.push(splideInstance);
+    }
+  }
+
+  destroySplide(): void {
+    this.splideInstances.forEach(instance => {
+      instance.destroy();
+    });
+
+    this.splideInstances = [];
+  }
 }
