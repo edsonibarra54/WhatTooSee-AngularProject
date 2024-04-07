@@ -4,6 +4,10 @@ import { LoginPage } from './pages/login/login.page';
 import { ProductionPage } from './pages/production/production.page';
 import { CommunityPage } from './pages/community/community.page';
 import { MaterialPage } from './pages/material/material.page';
+import { ProfilePage } from './pages/profile/profile.page';
+import { EditProfilePage } from './pages/edit-profile/edit-profile.page';
+import { EditProductionsPage } from './pages/edit-productions/edit-productions.page';
+
 
 export const routes: Routes = [ 
     { path: "", redirectTo: "home", pathMatch: "full" },
@@ -11,5 +15,8 @@ export const routes: Routes = [
     { path: "production", component: ProductionPage },
     { path: "community", component: CommunityPage },
     { path: "login", component: LoginPage },
-    { path: "material", component: MaterialPage }
+    { path: "material", component: MaterialPage },
+    { path: "profile", component: ProfilePage },
+    { path: "edit-profile", component: EditProfilePage},
+    { path: "edit-productions", component: EditProductionsPage}
 ];

@@ -1,10 +1,11 @@
-import { Component, Input, HostListener,  } from '@angular/core';
+import { Component, Input  } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.css'
 })
@@ -12,6 +13,9 @@ import { CommonModule } from '@angular/common';
 export class UserCardComponent {
   @Input() data: string ="";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  redirectToProfile() {
+    this.router.navigateByUrl('/profile');
+  }
 }
