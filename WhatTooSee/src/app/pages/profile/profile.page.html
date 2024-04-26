@@ -1,10 +1,9 @@
 <div id="page-Container">
-    <app-profile-information></app-profile-information>
+    <app-profile-information [user]="profile"></app-profile-information>
     <button id="editProfile" (click)="redirectToEditProfile()">Edit profile</button>
     <div class="line"></div>
-    <app-profile-commentaries></app-profile-commentaries>
-    <app-profile-commentaries></app-profile-commentaries>
-    <app-profile-commentaries></app-profile-commentaries>
-    <app-profile-commentaries></app-profile-commentaries>
+    <div *ngFor="let comment of comments">
+        <app-profile-commentaries [comment]="comment"></app-profile-commentaries>
+    </div>
 </div>
 <div id="edit" (click)="redirectToEditProductions()">Edit</div>

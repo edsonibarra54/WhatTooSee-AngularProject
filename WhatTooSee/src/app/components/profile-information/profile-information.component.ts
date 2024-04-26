@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component , Input} from '@angular/core';
 import { Profile } from '../../interfaces/profile-information.interface';
 import { CommonModule } from '@angular/common';
 
@@ -12,10 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class ProfileInformationComponent {
 
-  profileData: Profile | undefined;
+  @Input() user: Profile | undefined;
 
   constructor(private http : HttpClient) { 
-    this.fetchProfileData();
   }
 
   selectHeart(event: Event, ) {
@@ -30,11 +29,12 @@ export class ProfileInformationComponent {
         clickedHeart.classList.add('corazon-vacio');
     }
   }
-
+  /*
   fetchProfileData(): void {
     this.http.get<any>("http://localhost:8080/api/users/getUser").subscribe(
       (response) => {
         this.profileData = {
+          _id: response.result[0]._id,
           email: response.result[0].email,
           username: response.result[0].username,
           password: response.result[0].password,
@@ -49,5 +49,5 @@ export class ProfileInformationComponent {
         console.log('Error fetching profile data:', error);
       }
     );
-  }
+  }*/
 }

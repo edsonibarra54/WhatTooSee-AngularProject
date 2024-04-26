@@ -16,7 +16,7 @@ export const routes: Routes = [
     { path: "community", component: CommunityPage },
     { path: "login", component: LoginPage },
     { path: "material", component: MaterialPage },
-    { path: "profile", component: ProfilePage },
+    { path: "profile/:id", component: ProfilePage },
     { path: "edit-profile", component: EditProfilePage},
     { path: "edit-productions", component: EditProductionsPage}
 ];

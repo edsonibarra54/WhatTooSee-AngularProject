@@ -14,37 +14,12 @@ import { Profile } from '../../interfaces/profile-information.interface';
 
 export class UserCardComponent {
   @Input() profile: Profile | undefined;
-  profiles: Profile[] = [];
 
   constructor(private router: Router, private http : HttpClient) { 
-    this.fetchProfileData();
   }
 
-  redirectToProfile() {
-    this.router.navigateByUrl('/profile');
+  redirectToProfile(userId: string): void {
+    this.router.navigate(['/profile', userId]);
   }
 
-  fetchProfileData(): void {
-    this.http.get<any>("http://localhost:8080/api/users/getUser").subscribe(
-      (response) => {
-        if (response && response.result && response.result.length > 0) {
-          this.profiles = response.result.map((user: any) => ({
-            email: user.email,
-            username: user.username,
-            password: user.password,
-            photo: user.photo,
-            description: user.description,
-            followers: parseInt(user.followers),
-            following: parseInt(user.follow),
-            is_admin: parseInt(user.is_admin)
-          }));
-        } else {
-          this.profiles = [];
-        }
-      },
-      (error) => {
-        console.log('Error fetching profile data:', error);
-      }
-    );
-  }
 }

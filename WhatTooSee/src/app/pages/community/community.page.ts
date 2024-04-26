@@ -23,6 +23,7 @@ export class CommunityPage {
       (response) => {
         if (response && response.result && response.result.length > 0) {
           this.profiles = response.result.map((user: any) => ({
+            _id: user._id,
             email: user.email,
             username: user.username,
             password: user.password,

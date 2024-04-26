@@ -1,15 +1,15 @@
-<div  id="profile-Container" *ngIf="profileData">
+<div  id="profile-Container">
     <div id="corazon" class="corazon-vacio">
         <i class="fas fa-heart" (click)="selectHeart($event)"></i>
     </div>
     <div id="profile-Image"></div>
     <div id="name-Container">
         <div class="line"></div>
-        <div id="title">{{ profileData.username }}</div>
+        <div id="title">{{ user?.username }}</div>
         <div class="line"></div>
     </div>
     <div id="follow">
-        <div>Followers:</div><div id="followersNo"> {{ profileData.followers }} </div>
-        <div>Following:</div><div id="followingNo"> {{ profileData.following }} </div>
+        <div>Followers:</div><div id="followersNo"> {{ user?.followers }} </div>
+        <div>Following:</div><div id="followingNo"> {{ user?.follow }} </div>
     </div>
 </div>

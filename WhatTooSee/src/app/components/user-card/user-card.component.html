@@ -1,4 +1,4 @@
-<div class="card" (click)="redirectToProfile()">
+<div class="card" (click)="profile && redirectToProfile(profile._id)">
     <div class="img"></div>
     <span>{{ profile?.username  }}</span>
 </div>
