@@ -10,10 +10,5 @@
 </div>
 <div class="line"></div>
 <div id="profile-Container">
-    <app-user-card [data]="userData"></app-user-card>
-    <app-user-card [data]="userData"></app-user-card>
-    <app-user-card [data]="userData"></app-user-card>
-    <app-user-card [data]="userData"></app-user-card>
-    <app-user-card [data]="userData"></app-user-card>
-    <app-user-card [data]="userData"></app-user-card>
+    <app-user-card *ngFor="let profile of profiles" [profile]="profile"></app-user-card>
 </div>
