@@ -2,7 +2,10 @@
     <div id="corazon" class="corazon-vacio">
         <i class="fas fa-heart" (click)="selectHeart($event)"></i>
     </div>
-    <img id="profile-Image" *ngIf="user?.photo" [src]="user?.photo">
+    
+    <div id="profile-Image">
+        <img id="profileImg" *ngIf="user?.photo" [src]="user?.photo">
+    </div>
     <div id="name-Container">
         <div class="line"></div>
         <div id="title">{{ user?.username }}</div>
