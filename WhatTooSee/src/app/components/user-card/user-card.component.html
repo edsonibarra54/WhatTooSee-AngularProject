@@ -1,4 +1,7 @@
 <div class="card" (click)="profile && redirectToProfile(profile._id)">
-    <div class="img"></div>
+    <div class="img">
+        <img class = "profileImg" *ngIf="profile?.photo" [src]="profile?.photo">
+    </div>
+    
     <span>{{ profile?.username  }}</span>
 </div>

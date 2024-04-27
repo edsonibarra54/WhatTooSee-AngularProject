@@ -2,7 +2,7 @@
     <div class="comment-Container">
         <div class="comment-Info">
             <div class="poster-Container" (click)="redirectToProduction()">
-                <img class="posterImage" src="../../../assets/KillersOfTheFlowerMoon.jpg">
+                <img class="posterImage" *ngIf="production?.poster" [src]="production.poster">
             </div>
             <div class="cal-Container">
                 <i class="fas fa-star" *ngFor="let i of getStarsArray(comment!.stars)"></i>

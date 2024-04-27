@@ -11,6 +11,7 @@ class Server{
         this.usersPath = "/api/as";
         this.profilePath = "/api/users";
         this.commentsPath = "/api/comments";
+        this.productionsPath = "/api/productions";
 
         this.middlewares();
         this.routes();
@@ -22,6 +23,7 @@ class Server{
         this.app.use(this.usersPath, require("../routes/pruebas"));
         this.app.use(this.profilePath, require("../routes/users"));
         this.app.use(this.commentsPath, require("../routes/comments"));
+        this.app.use(this.productionsPath, require("../routes/productions"));
     }
 
     listen(){

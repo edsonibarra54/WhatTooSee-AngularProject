@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CommentsUser } from '../../interfaces/comments-user.interface';
 import { CommonModule } from '@angular/common';
+import { Production } from '../../interfaces/production.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile-commentaries',
@@ -12,16 +14,20 @@ import { CommonModule } from '@angular/common';
 })
 export class ProfileCommentariesComponent {
 
-  @Input() comment: CommentsUser | undefined;
+  @Input() comment: CommentsUser | undefined; 
+ 
+  production!: Production;
 
   starsArray: Number[] = [];
 
-  constructor(private router: Router) { 
+  constructor(private router: Router, private http : HttpClient) { 
+    
   }
 
   ngOnInit(): void {
     if (this.comment) {
       this.starsArray = this.getStarsArray(this.comment.stars);
+      this.fetchProductionData(this.comment.id_production);
     }
   }
 
@@ -31,5 +37,19 @@ export class ProfileCommentariesComponent {
 
   getStarsArray(rating: Number): Number[] {
     return Array(rating).fill(0);
+  }
+
+  fetchProductionData(productionId: string): void {
+    const url = "http://localhost:8080/api/productions/getProduction?id=" + productionId;
+    this.http.get(url).subscribe(
+      {
+        next: (response: any) =>{
+          this.production = response.result;
+        },
+        error: (error: any) => {
+          console.log(error);
+        }
+      }
+    );
   }
 }

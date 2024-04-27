@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Profile } from '../../interfaces/profile-information.interface';
 import { Location , CommonModule} from '@angular/common';
 import { CommentsUser } from '../../interfaces/comments-user.interface';
+import { Production } from '../../interfaces/production.interface';
 
 @Component({
   selector: 'app-profile',
