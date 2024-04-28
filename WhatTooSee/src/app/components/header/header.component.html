@@ -6,6 +6,7 @@
                 <a routerLink="./production" class="link">Peliculas/Series</a>
                 <a routerLink="./community" class="link">Comunidad</a>
                 <ng-container *ngIf="userlog.getIsLogged(); else notLoggedIn">
+                    <a [routerLink]="['/profile' , userlog.getData()._id]" class="link">Profile</a>
                     <a routerLink="./home" class="link" (click)="userlog.cleanUser()">Cerrar Sesion </a>
                 </ng-container>
                 <ng-template #notLoggedIn>

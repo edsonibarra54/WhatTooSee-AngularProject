@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet , Router } from '@angular/router';
 import { loggedUser } from '../../services/singletonuser.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { loggedUser } from '../../services/singletonuser.service';
 export class HeaderComponent implements AfterViewInit{
   public isSecondListVisible: boolean = false;
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2 , public userlog: loggedUser) {}
+  constructor(private elRef: ElementRef, private renderer: Renderer2 , public userlog: loggedUser, private router: Router) {}
 
   ngAfterViewInit(): void {
     const menuTop = this.elRef.nativeElement.querySelector('#menu-top');
@@ -40,4 +40,5 @@ export class HeaderComponent implements AfterViewInit{
     const displayValue = this.isSecondListVisible ? 'flex' : 'none';
     this.renderer.setStyle(secondList, 'display', displayValue);
   }
+
 }
