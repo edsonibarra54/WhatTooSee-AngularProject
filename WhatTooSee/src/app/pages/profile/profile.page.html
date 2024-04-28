@@ -1,9 +1,9 @@
 <div id="page-Container">
     <app-profile-information [user]="profile"></app-profile-information>
-    <button id="editProfile" (click)="redirectToEditProfile()">Edit profile</button>
+    <button id="editProfile" (click)="redirectToEditProfile()" *ngIf="mySelf">Edit profile</button>
     <div class="line"></div>
     <div *ngFor="let comment of comments">
         <app-profile-commentaries [comment]="comment"></app-profile-commentaries>
     </div>
 </div>
-<div id="edit" (click)="redirectToEditProductions()">Edit</div>
+<div id="edit" (click)="redirectToEditProductions()" *ngIf="userlog.isAdmin()" >Edit</div>

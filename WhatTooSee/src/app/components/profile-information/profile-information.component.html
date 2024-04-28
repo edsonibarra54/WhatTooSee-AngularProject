@@ -1,5 +1,5 @@
 <div  id="profile-Container">
-    <div id="corazon" class="corazon-vacio">
+    <div id="corazon" class="corazon-vacio" *ngIf="userlog.getIsLogged()">
         <i class="fas fa-heart" (click)="selectHeart($event)"></i>
     </div>
     

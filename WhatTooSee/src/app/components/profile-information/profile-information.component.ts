@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component , Input} from '@angular/core';
 import { Profile } from '../../interfaces/profile-information.interface';
 import { CommonModule } from '@angular/common';
+import { loggedUser } from '../../services/singletonuser.service';
 
 @Component({
   selector: 'app-profile-information',
@@ -14,7 +15,7 @@ export class ProfileInformationComponent {
 
   @Input() user: Profile | undefined;
 
-  constructor(private http : HttpClient) { 
+  constructor(private http : HttpClient, public userlog: loggedUser) { 
   }
 
   selectHeart(event: Event, ) {

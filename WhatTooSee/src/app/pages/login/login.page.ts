@@ -1,11 +1,16 @@
-import { Component, OnInit, OnDestroy, Renderer2  } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2 , NgModule, input, Input } from '@angular/core';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { loggedUser } from '../../services/singletonuser.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
+  standalone: true,
+  imports: [FormsModule],
   styleUrls: ['./login.page.css'],
   animations: [
     trigger('action_up', [
@@ -48,10 +53,17 @@ import { filter } from 'rxjs/operators';
 })
 
 export class LoginPage implements OnInit, OnDestroy {
+  email: string = "";
+  password: string = "";
   userAction: string = "login";
 
-  constructor(private renderer: Renderer2, private router: Router) {}
+  constructor(private renderer: Renderer2, private router: Router, private http : HttpClient, private loggeduser: loggedUser) {}
 
+  signIn(): void {
+    console.log("Click");
+    this.fetchAuthUser(this.email, this.password);
+  }
+  
   toggleAnimation(): void {
     this.userAction = this.userAction === "login" ? "signup" : "login";
   }
@@ -90,4 +102,28 @@ export class LoginPage implements OnInit, OnDestroy {
   navigateToAnotherRoute(): void {
     this.router.navigate(['/home']);
   }
+
+  fetchAuthUser(email: string, password: string): void {
+    const url = "http://localhost:8080/api/users/auth?email=" + email + "&password=" + password;
+    console.log(url);
+      this.http.get(url).subscribe(
+        {
+          next: (response: any) =>{
+            if(response.result) {
+              console.log("ola");
+              this.loggeduser.setData(response.result);
+              this.navigateToAnotherRoute();
+            } else {
+              alert("Credenciales incorrectas");
+            }
+          },
+          error: (error: any) => {
+            alert("Credenciales incorrectas");
+            console.log(error);
+          }
+        }
+      );
+  }
+
+  
 }

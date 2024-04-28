@@ -43,7 +43,35 @@ const getProfileId = (req = request, res = response) => {
     );
 }
 
+const authenticateUser = (req = request, res = response) => {
+    const { email, password } = req.query;
+
+    users.findOne({ email: email, password: password }).then(
+        (result) => {
+            if (result) {
+                res.status(200).json({
+                    msg: "Usuario autenticado",
+                    result
+                });
+            } else {
+                res.status(404).json({
+                    msg: "Usuario no encontrado",
+                    result: null
+                });
+            }
+        }
+    ).catch(
+        (error) => {
+            res.status(500).json({
+                msg: "Error de servidor",
+                error
+            });
+        }
+    );
+}
+
 module.exports = {
     getProfile,
-    getProfileId
+    getProfileId,
+    authenticateUser
 }

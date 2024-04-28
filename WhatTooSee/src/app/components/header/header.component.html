@@ -5,7 +5,12 @@
             <div class="list" id="listMenu">
                 <a routerLink="./production" class="link">Peliculas/Series</a>
                 <a routerLink="./community" class="link">Comunidad</a>
-                <a routerLink="./login" class="link">Iniciar Sesion</a>
+                <ng-container *ngIf="userlog.getIsLogged(); else notLoggedIn">
+                    <a routerLink="./home" class="link" (click)="userlog.cleanUser()">Cerrar Sesion </a>
+                </ng-container>
+                <ng-template #notLoggedIn>
+                    <a routerLink="./login" class="link"> Iniciar Sesion</a>
+                </ng-template>
             </div>
         </div>
         <div class="menu-toggle" (click)="toggleSecondList()">

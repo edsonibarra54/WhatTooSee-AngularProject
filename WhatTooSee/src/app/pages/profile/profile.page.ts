@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Profile } from '../../interfaces/profile-information.interface';
 import { Location , CommonModule} from '@angular/common';
 import { CommentsUser } from '../../interfaces/comments-user.interface';
-import { Production } from '../../interfaces/production.interface';
+import { loggedUser } from '../../services/singletonuser.service';
 
 @Component({
   selector: 'app-profile',
@@ -20,13 +20,14 @@ export class ProfilePage {
   comments: CommentsUser[] = [];
   profile!: Profile;
   userId: string;
+  mySelf: boolean = false;
 
-  constructor(private router: Router, private http : HttpClient, private location: Location) { 
-     // Obtener el ID del usuario desde la URL
+  constructor(private router: Router, private http : HttpClient, private location: Location, public userlog: loggedUser) { 
      const url = this.location.path();
      const segments = url.split('/');
      this.userId = segments[segments.length - 1];
      console.log( this.userId);
+     this.getMySelf();
      this.fetchProfileData(this.userId);
      this.fetchProfileCommentsData(this.userId);
   }
@@ -73,5 +74,13 @@ export class ProfilePage {
         console.log('Error fetching profile data:', error);
       }
     );
+  }
+
+  getMySelf(): void{
+    if(this.userId == this.userlog.getData()._id){
+      this.mySelf = true;
+    } else {
+      this.mySelf = false;
+    }
   }
 }
