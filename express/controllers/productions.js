@@ -42,7 +42,28 @@ const getProduction = (req = request, res = response) => {
     );
 }
 
+const getProductionById = (req = request, res = response) => {
+    const { id } = req.query;
+    const objectId = ObjectId.isValid(id) ? new ObjectId(id) : null;
+    productions.findById(objectId).then(
+        (result) => {
+            res.status(200).json({
+                msg: "production ola",
+                result
+            });
+        }
+    ).catch(
+        (error) => {
+            res.status(500).json({
+                msg: "Error",
+                result: []
+            });
+        }
+    );
+}
+
 module.exports = {
     getProductions,
-    getProduction
+    getProduction,
+    getProductionById
 }

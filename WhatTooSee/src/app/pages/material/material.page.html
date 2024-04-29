@@ -1,43 +1,43 @@
 <div id="poster-Container">
-    <div id="id-Material">Id = 1000</div>
+    <div id="id-Material">Id = {{production._id}}</div>
     <div id="poster">
-        <img id="poster-Image" src="../../../assets/KillersOfTheFlowerMoon.jpg">
+        <img id="poster-Image" [src]="production.poster">
     </div>
     <div id="name-Container">
-        <div id="title">Killers of the flower moon</div>
+        <div id="title">{{production.name}}</div>
         <div class="line"></div>
         <div id="cali-Container">
             <i class="fas fa-star" id="star"></i>
-            <div id="calificacion">10</div>
+            <div id="calificacion">{{production.rating}}</div>
         </div>
         <div class="line"></div>
         <div class="text-Container">
             <div class="charact">Genre:</div>
-            <div class="info" id="genre">Crime, Drama</div>
+            <div class="info" id="genre">{{production.genre}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Rating:</div>
-            <div class="info" id="rating">R</div>
+            <div class="info" id="rating">{{production.classification}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Director:</div>
-            <div class="info" id="director">Martin Scorsese</div>
+            <div class="info" id="director">{{production.director}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Writer:</div>
-            <div class="info" id="writer">Eric Roth, Martin Scorsese</div>
+            <div class="info" id="writer">{{production.writer}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Cast:</div>
-            <div class="info" id="cast">Leonardo DiCaprio, Robert De Niro, Jesse Plemons</div>
+            <div class="info" id="cast">{{production.cast}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Release Date:</div>
-            <div class="info" id="release">Oct 20, 2023</div>
+            <div class="info" id="release">{{production.release}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Runtime:</div>
-            <div class="info" id="runtime">3h 26m</div>
+            <div class="info" id="runtime">{{production.runtime}}</div>
         </div>
     </div>
 </div>
@@ -63,11 +63,6 @@
     </div>
 </div>
 <div class="line"></div>
-<div id="commentaries-Container">
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
+<div id="commentaries-Container" *ngFor="let comment of comments">
+    <app-commentary-box class="comment-Container" [comment]="comment"></app-commentary-box>
 </div>

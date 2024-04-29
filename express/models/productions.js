@@ -17,7 +17,8 @@ const productionsSchema = mongoose.Schema(
         new_serie: Boolean,
         type_prod: Number,
         poster: String,
-        banner:String
+        banner:String,
+        classification: String
     }
 )
 

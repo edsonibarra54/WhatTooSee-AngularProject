@@ -14,5 +14,6 @@ export interface Production {
     new_serie: boolean,
     type_prod: number,
     poster: string,
-    banner:string
+    banner:string,
+    classification: string
   }

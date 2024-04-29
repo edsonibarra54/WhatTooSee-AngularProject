@@ -17,7 +17,7 @@ export class ProductionCardComponent {
   constructor(private router: Router, private http : HttpClient) { 
   }
 
-  redirectToProduction(userProduction: string): void {
-    this.router.navigate(['/material', userProduction]);
+  redirectToProduction(productionId: string): void {
+    this.router.navigate(['/material', productionId]);
   }
 }
