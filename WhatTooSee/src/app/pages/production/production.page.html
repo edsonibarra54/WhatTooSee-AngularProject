@@ -27,15 +27,6 @@
     </div>
 </div>
 <div class="line"></div>
-<div id="productions-Container">
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
+<div id="productions-Container" *ngFor="let production of productions">
+    <app-production-card class="production" [production]="production"></app-production-card>
 </div>

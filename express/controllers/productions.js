@@ -2,6 +2,25 @@ const { request, response } = require("express");
 const productions = require("../models/productions");
 const { ObjectId } = require('mongodb');
 
+const getProductions = (req = request, res = response) => {
+    const params = req.query;
+
+    productions.find().then(
+        (result) => {
+            res.status(200).json({
+                msg: "productions ola",
+                result
+            });
+        }
+    ).catch(
+        (error) => {
+            res.status(500).json({
+                msg: "Error",
+                result: []
+            });
+        }
+    );
+}
 
 const getProduction = (req = request, res = response) => {
     const { id } = req.query;
@@ -24,5 +43,6 @@ const getProduction = (req = request, res = response) => {
 }
 
 module.exports = {
+    getProductions,
     getProduction
 }

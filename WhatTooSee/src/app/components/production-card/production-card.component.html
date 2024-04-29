@@ -1,13 +1,13 @@
-<a routerLink="../material" class="posterContainer">
+<div class="posterContainer" (click)="production && redirectToProduction(production._id)">
     <div class="poster">
-        <img class="posterImage" src="../../../assets/KillersOfTheFlowerMoon.jpg">
+        <img class="posterImage" [src]="production?.poster">
         <div class="gradient"></div>
     </div>
     <div class="posterInfo">
-        <div class="posterTitle">Killers of the flower moon</div>
+        <div class="posterTitle">{{production?.name}}</div>
         <div class="posterCali">
             <i class="fas fa-star"></i>
-            <div class="calificacion">10</div>
+            <div class="calificacion">{{production?.rating}}</div>
         </div>
     </div>
-</a>
+</div>
