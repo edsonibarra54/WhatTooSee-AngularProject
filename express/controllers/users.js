@@ -1,6 +1,5 @@
 const { request, response } = require("express");
 const users = require("../models/users");
-const userReg = require("../models/userReg");
 const mongoose = require("mongoose");
 const { ObjectId } = require('mongodb');
 
@@ -74,20 +73,16 @@ const authenticateUser = (req = request, res = response) => {
 
 const registerUser = (req = request, res = response) => {
     const { email, username, password} = req.body;
-    const photo = "";
-    const description = "";
-    const follow = 0;
-    const followers = 0;
-    const is_admin = 0;
     const newUser = users({
+        _id: new mongoose.Types.ObjectId(), 
         email,
         username,
-        password,
-        photo,
-        description,
-        follow,
-        followers,
-        is_admin,
+        password, 
+        photo: "", 
+        description: "", 
+        follow: 0, 
+        followers: 0, 
+        is_admin: 0 
     })
 
     newUser.save().then(

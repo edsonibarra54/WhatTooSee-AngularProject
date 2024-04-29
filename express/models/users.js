@@ -11,8 +11,8 @@ const userSchema = mongoose.Schema(
         follow: Number,
         followers: Number,
         is_admin: Number
-    }
-)
+    },{ versionKey: false }
+);
 
 
 module.exports = mongoose.model("users", userSchema);

@@ -125,5 +125,15 @@ export class LoginPage implements OnInit, OnDestroy {
       );
   }
 
-  
+  registerUser(username: string, email: string, password: string): void {
+    const url = "http://localhost:8080/api/users/registerUser";
+    this.http.post(url, { username: username, email: email, password: password}).subscribe({
+      next: (response: any) => {
+        console.log('Usuario insertado con éxito', response);
+      },
+      error: (error: any) => {
+        console.error('Error al insertar el usuario', error);
+      }
+    });
+  }
 }
