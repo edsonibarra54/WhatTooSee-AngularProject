@@ -1,12 +1,8 @@
 <div class="profile-Container">
     <img class="profile-Image" (click)="redirectToProfile()" *ngIf="profile?.photo" [src]="profile.photo">
-    <div class="profile-Name">{{profile.username}}</div>
+    <div class="profile-Name" *ngIf="profile">{{profile.username}}</div>
     <div class="cal-Container">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+        <i class="fas fa-star" *ngFor="let i of getStarsArray(comment!.stars)"></i>
     </div>
 </div>
 <div class="text">{{comment?.comment}}</div>

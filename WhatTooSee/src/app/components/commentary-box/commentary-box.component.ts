@@ -28,7 +28,11 @@ export class CommentaryBoxComponent {
   }
 
   redirectToProfile() {
-    this.router.navigateByUrl('/profile');
+    this.router.navigate(['/profile', this.profile._id]);
+  }
+
+  getStarsArray(rating: Number): Number[] {
+    return Array(rating).fill(0);
   }
 
   fetchProfileData(userId: string): void {
