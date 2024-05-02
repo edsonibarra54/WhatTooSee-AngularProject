@@ -62,8 +62,27 @@ const getProductionById = (req = request, res = response) => {
     );
 }
 
+const getProductionsByType = (req = request, res = response) => {
+    const { type } = req.query;
+
+    productions.find({ type_prod: type })
+        .then((result) => {
+            res.status(200).json({
+                msg: "Productions found",
+                result
+            });
+        })
+        .catch((error) => {
+            res.status(500).json({
+                msg: "Error",
+                result: []
+            });
+        });
+};
+
 module.exports = {
     getProductions,
     getProduction,
-    getProductionById
+    getProductionById,
+    getProductionsByType
 }

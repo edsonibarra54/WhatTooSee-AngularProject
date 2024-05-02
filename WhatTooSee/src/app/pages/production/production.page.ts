@@ -15,11 +15,21 @@ export class ProductionPage {
   productions: Production[] = [];
   
   constructor(private http: HttpClient) {
-    this.fetchProductionsData();
+    this.fetchProductionsData(1);
   }
 
-  fetchProductionsData(): void{
-    this.http.get<any>("http://localhost:8080/api/productions/getProductions").subscribe(
+  fetchFilteredProductions(type: Number){
+    if (type == 1){
+      this.fetchProductionsData(1);
+      console.log("Se debe hacer fetch a peliculas");
+    } else {
+      this.fetchProductionsData(2);
+      console.log("Se debe hacer fetch a series");
+    }
+  }
+
+  fetchProductionsData(type: Number): void{
+    this.http.get<any>("http://localhost:8080/api/productions/getProductionsByType?type=" + type).subscribe(
       (response) => {
         console.log(response);
         if (response && response.result && response.result.length > 0) {

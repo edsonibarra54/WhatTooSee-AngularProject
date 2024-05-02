@@ -4,8 +4,8 @@
         <div id="button-box">
             <div id="btn"></div>
             <div class="btn-Content">
-                <button type="button" class="toggle-btn" id="btn-Left">Movies</button>
-                <button type="button" class="toggle-btn" id="btn-Right">Series</button>
+                <button type="button" class="toggle-btn" id="btn-Left" (click)="fetchFilteredProductions(1)">Movies</button>
+                <button type="button" class="toggle-btn" id="btn-Right" (click)="fetchFilteredProductions(2)">Series</button>
             </div>
         </div>
     </div>
