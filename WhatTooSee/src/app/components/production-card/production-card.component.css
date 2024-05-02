@@ -39,6 +39,8 @@
         font-size: 1.1rem;
         font-family: Bebas Neue;
         overflow: hidden;
+        overflow: hidden;
+        white-space: nowrap;
         text-overflow: ellipsis;
         display: flex;
         align-items: center;

@@ -63,14 +63,31 @@ const getProductionById = (req = request, res = response) => {
 }
 
 const getProductionsByType = (req = request, res = response) => {
-    const { type } = req.query;
+    const { type, genre } = req.query;
+    let query = {};
 
-    productions.find({ type_prod: type })
+    query.type_prod = type;
+
+    if (genre) {
+        query.genre = genre;
+    }
+
+    console.log(query);
+
+    productions.find(query)
         .then((result) => {
-            res.status(200).json({
-                msg: "Productions found",
-                result
-            });
+            if (result.length > 0) {
+                res.status(200).json({
+                    msg: "Productions found",
+                    result
+                });
+                console.log(result);
+            } else {
+                res.status(200).json({
+                    msg: "No productions found for the specified type",
+                    result: []
+                });
+            }
         })
         .catch((error) => {
             res.status(500).json({

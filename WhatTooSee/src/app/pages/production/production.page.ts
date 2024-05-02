@@ -3,36 +3,84 @@ import { ProductionCardComponent } from '../../components/production-card/produc
 import { Production } from '../../interfaces/production.interface';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-production',
   standalone: true,
-  imports: [ ProductionCardComponent, CommonModule ],
+  imports: [ ProductionCardComponent, CommonModule, FormsModule ],
   templateUrl: './production.page.html',
   styleUrl: './production.page.css'
 })
 export class ProductionPage {
   productions: Production[] = [];
+  productions2: Production[] = [];
+  filteredProductions: Production[] = [];
+  currentType: Number = 1;
+  currentFilter: string = "";
+  searchTerm: string = '';
   
   constructor(private http: HttpClient) {
-    this.fetchProductionsData(1);
+    this.fetchProductionsData();
   }
 
-  fetchFilteredProductions(type: Number){
+  filterProductions() {
+    console.log("Filtering productions");
+    if(this.searchTerm == ""){
+      this.productions = this.productions2;
+    } else {
+      this.filteredProductions = this.productions.filter((production) =>
+        production.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+      this.productions = this.filteredProductions;
+    }
+  }
+
+  changeType(type: Number){
     if (type == 1){
-      this.fetchProductionsData(1);
+      this.currentType = 1;
+      this.currentFilter = "";
+      this.fetchProductionsData();
       console.log("Se debe hacer fetch a peliculas");
     } else {
-      this.fetchProductionsData(2);
+      this.currentType = 2;
+      this.currentFilter = "";
+      this.fetchProductionsData();
       console.log("Se debe hacer fetch a series");
     }
   }
 
-  fetchProductionsData(type: Number): void{
-    this.http.get<any>("http://localhost:8080/api/productions/getProductionsByType?type=" + type).subscribe(
+  changeGenre(type: Number){
+    if (type == 1){
+      this.currentFilter = "";
+      this.fetchProductionsData();
+      console.log("Se debe hacer fetch a todos");
+    } else if (type == 2) {
+      this.currentFilter = "Action";
+      this.fetchProductionsData();
+      console.log("Se debe hacer fetch a accion");
+    } else if (type == 3) {
+      this.currentFilter = "Comedy";
+      this.fetchProductionsData();
+      console.log("Se debe hacer fetch a comedia");
+    } else if (type == 4) {
+      this.currentFilter = "Romantic";
+      this.fetchProductionsData();
+      console.log("Se debe hacer fetch a romantico");
+    } else if (type == 5) {
+      this.currentFilter = "Horror";
+      this.fetchProductionsData();
+      console.log("Se debe hacer fetch a horror");
+    }
+  }
+
+  fetchProductionsData(): void{
+    const url = "http://localhost:8080/api/productions/getProductionsByType?type=" + this.currentType + "&genre=" + this.currentFilter;
+    console.log(url);
+    this.http.get<any>(url).subscribe(
       (response) => {
         console.log(response);
-        if (response && response.result && response.result.length > 0) {
+        if (response) {
           this.productions = response.result.map((production: any) => ({
             _id: production._id,
             name: production.name,
@@ -41,6 +89,8 @@ export class ProductionPage {
             poster: production.poster,
             type_prod: production.type_prod
           }));
+
+          this.productions2 = this.productions;
         } else {
           this.productions = [];
         }
