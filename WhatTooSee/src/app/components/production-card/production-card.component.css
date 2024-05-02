@@ -18,7 +18,8 @@
     
     .posterImage{
         width: 100%;
-        object-fit: cover;
+        aspect-ratio: 7/9;
+        object-fit: fill;
     }
     
     .posterInfo{
@@ -85,6 +86,7 @@
     
     .posterImage{
         width: 100%;
+        aspect-ratio: 7/9;
         object-fit: cover;
     }
     
@@ -151,6 +153,7 @@
     
     .posterImage{
         width: 100%;
+        aspect-ratio: 7/9;
         object-fit: cover;
     }
     
