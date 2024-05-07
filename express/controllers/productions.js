@@ -97,9 +97,53 @@ const getProductionsByType = (req = request, res = response) => {
         });
 };
 
+const createProduction = (req = request, res = response) => {
+    const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, banner, classification } = req.body;
+
+    const newProduction = productions({
+        _id: mongoose.Schema.Types.ObjectId,
+        name,
+        rating,
+        genre,
+        director,
+        writer,
+        cast,
+        release,
+        runtime,
+        best_movie,
+        best_serie,
+        premier_movie,
+        new_serie,
+        type_prod,
+        poster,
+        banner,
+        classification
+    })
+
+    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !best_movie || !best_serie || !premier_movie || !new_serie || !type_prod || !poster || !banner || !classification
+    ){
+        res.status(400).json({
+            msg: "Faltan datos"
+        })
+        return;
+    }
+
+    newProduction.save().then(() => {
+        res.status(200).json({
+            msg: "Usuario insertado",
+        });
+    }).catch((error) => {
+        res.status(500).json({
+            msg: "Error de servidor",
+            error
+        });
+    });
+}
+
 module.exports = {
     getProductions,
     getProduction,
     getProductionById,
-    getProductionsByType
+    getProductionsByType,
+    createProduction
 }

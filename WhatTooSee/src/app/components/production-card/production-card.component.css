@@ -19,7 +19,7 @@
     .posterImage{
         width: 100%;
         aspect-ratio: 7/9;
-        object-fit: fill;
+        object-fit: cover;
     }
     
     .posterInfo{
