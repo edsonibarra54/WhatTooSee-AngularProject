@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-edit-productions',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './edit-productions.page.html',
   styleUrl: './edit-productions.page.css'
 })
 export class EditProductionsPage {
+  public selectedType: string = 'movie';
   public newProductionName: string = "";
   public newProductionRating: number = 0;
   public newProductionGenre: string[] = [];
@@ -25,10 +27,21 @@ export class EditProductionsPage {
   public newProductionTypeProd: number = 0;
   public newProductionPoster: string = "";
   public newProductionBanner: string = "";
+  public newProductionshowBanner: boolean = false;
   public newProductionClassification: string = "";
 
   constructor(private http: HttpClient) {
 
+  }
+
+  onTypeChange() {
+    if (this.selectedType === 'movie') {
+      this.newProductionBestMovie = false;
+      this.newProductionPremierMovie = false;
+    } else if (this.selectedType === 'series') {
+      this.newProductionBestSerie = false;
+      this.newProductionNewSerie = false;
+    }
   }
 
   public onClickCreate(): void {
@@ -38,17 +51,24 @@ export class EditProductionsPage {
     let selectElement = document.getElementById("typeSelect") as HTMLSelectElement;
     if (selectElement) {
       if (selectElement.value == "movie")
-        this.newProductionTypeProd = 1;
-      else
-        this.newProductionTypeProd = 2;
+        this.newProductionTypeProd = selectElement.value === "movie" ? 1 : 2;
     }
 
-    if (this.newProductionRating > 10) {
-      console.log("A rating cannot be bigger than 10");
+    this.newProductionRating = parseFloat(this.newProductionRating.toFixed(1));
+    if (isNaN(this.newProductionRating) || this.newProductionRating < 0 || this.newProductionRating > 10) {
+      console.log("Invalid rating. Rating must be a number between 0 and 10.");
       return;
     }
-    this.newProductionRating = parseFloat(this.newProductionRating.toFixed(1));
+
     this.newProductionRuntime = parseFloat(this.newProductionRuntime.toFixed(0));
+    if (isNaN(this.newProductionRuntime) || this.newProductionRuntime < 1 || this.newProductionRuntime > 500) {
+      console.log("Invalid runtime. Runtime must be a number between 1 and 500.");
+      return;
+    }
+
+    if (!this.newProductionshowBanner) {
+      this.newProductionBanner = "";
+    }
 
     const productionData = {
       name: this.newProductionName,
@@ -66,7 +86,8 @@ export class EditProductionsPage {
       type_prod: this.newProductionTypeProd,
       poster: this.newProductionPoster,
       banner: this.newProductionBanner,
-      classification: this.newProductionClassification
+      classification: this.newProductionClassification,
+      hasPoster: this.newProductionshowBanner
     };
 
     this.http.post<any>(url, productionData).subscribe(

@@ -1,5 +1,6 @@
 const { request, response } = require("express");
 const productions = require("../models/productions");
+const mongoose = require("mongoose");
 const { ObjectId } = require('mongodb');
 
 const getProductions = (req = request, res = response) => {
@@ -101,7 +102,7 @@ const createProduction = (req = request, res = response) => {
     const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, banner, classification } = req.body;
 
     const newProduction = productions({
-        _id: mongoose.Schema.Types.ObjectId,
+        _id: new mongoose.Types.ObjectId(), 
         name,
         rating,
         genre,
@@ -120,8 +121,10 @@ const createProduction = (req = request, res = response) => {
         classification
     })
 
-    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !best_movie || !best_serie || !premier_movie || !new_serie || !type_prod || !poster || !banner || !classification
-    ){
+    console.log(newProduction);
+
+    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !type_prod || !poster || !banner || !classification){
+        console.log("Faltan datos");
         res.status(400).json({
             msg: "Faltan datos"
         })
