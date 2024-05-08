@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "662aefb985e8bdc4b52031e3"
+  },
+  "email": "fernada@gmail.com",
+  "username": "FernandaMovies",
+  "password": "1234",
+  "photo": "https://articles-img.sftcdn.net/t_articles/auto-mapping-folder/sites/2/2023/02/Midjourney-foto.jpg",
+  "description": "¡Hola! Soy el usuario 1.",
+  "follow": 0,
+  "followers": 0,
+  "is_admin": 0
+},
+{
+  "_id": {
+    "$oid": "662aefb985e8bdc4b52031e4"
+  },
+  "email": "claudia@gmail.com",
+  "username": "Claudia",
+  "password": "contraseña456",
+  "photo": "https://th.bing.com/th/id/R.ceae629bd83d074fc55d3af50d168ae3?rik=Q0afFDA371L5sA&riu=http%3a%2f%2falejandrovecchi.me%2fwp-content%2fuploads%2f2017%2f07%2fpersonas-felices-pro.jpg&ehk=Rf1CccYhM3nYPCXxUeiIoWCAZnbxqcEQfKDuB3btroY%3d&risl=&pid=ImgRaw&r=0",
+  "description": "¡Hola! Soy el usuario 2.",
+  "follow": 0,
+  "followers": 0,
+  "is_admin": 0
+},
+{
+  "_id": {
+    "$oid": "662aefb985e8bdc4b52031e5"
+  },
+  "email": "sofia@gmail.com",
+  "username": "SofiaSeries",
+  "password": "contrasena",
+  "photo": "https://th.bing.com/th/id/OIP.RY5Oi1h88crr20JCwDkapgHaLH?w=198&h=297&c=7&r=0&o=5&pid=1.7",
+  "description": "¡Hola! Soy el usuario 3.",
+  "follow": 0,
+  "followers": 0,
+  "is_admin": 0
+},
+{
+  "_id": {
+    "$oid": "662d83c99ee31722933e41f1"
+  },
+  "email": "edson@gmail.com",
+  "username": "EdsonAdmin",
+  "password": "1234",
+  "photo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5TRT5o2zoHv5DtuPNLYtujQCAr4uUu6dDkti73vHfUjtFUdOLO7qu639VOX_ZXcaFb4ASa12u0OLlG9MP_KUCY-hv2CMI4WTRLuA2lLVYgryl3ot86x_VKaSf87_5o8kfgoDuHIFQFRm45KuE--KBK1VACLuD4doOvWv1dujJQDEpnpQC3w/s512/00015-2782668338-Highly%20detailed%20portrait%20of%20eldm,%20stephen%20bliss,%20unreal%20engine,%20fantasy%20art%20by%20greg%20rutkowski,%20loish,%20rhads,%20ferdinand%20knab,%20mak.png",
+  "description": "¡Hola! Soy el usuario 2.",
+  "follow": 0,
+  "followers": 0,
+  "is_admin": 0
+},
+{
+  "_id": {
+    "$oid": "662d83c99ee31722933e41f2"
+  },
+  "email": "hector@gmail.com",
+  "username": "ManiAdmin",
+  "password": "1234",
+  "photo": "https://th.bing.com/th/id/R.fb170f334c2011aa5181e0eb42ad8594?rik=MBphvCc0n5QuTA&pid=ImgRaw&r=0",
+  "description": "¡Hola! Soy el usuario 2.",
+  "follow": 0,
+  "followers": 0,
+  "is_admin": 1
+}]

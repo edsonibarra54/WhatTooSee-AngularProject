@@ -24,7 +24,7 @@ export class EditProductionsPage {
   public newProductionBestSerie: boolean = false;
   public newProductionPremierMovie: boolean = false;
   public newProductionNewSerie: boolean = false;
-  public newProductionTypeProd: number = 0;
+  public newProductionTypeProd: number = 1;
   public newProductionPoster: string = "";
   public newProductionBanner: string = "";
   public newProductionshowBanner: boolean = false;
@@ -52,8 +52,7 @@ export class EditProductionsPage {
 
     let selectElement = document.getElementById("typeSelect") as HTMLSelectElement;
     if (selectElement) {
-      if (selectElement.value == "movie")
-        this.newProductionTypeProd = selectElement.value === "movie" ? 1 : 2;
+      this.newProductionTypeProd = selectElement.value === "movie" ? 1 : 2;
     }
 
     this.newProductionRating = parseFloat(this.newProductionRating.toFixed(1));

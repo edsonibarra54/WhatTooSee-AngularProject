@@ -120,7 +120,9 @@ const createProduction = (req = request, res = response) => {
         hasBanner
     })
 
-    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !type_prod || !poster || !classification || !hasBanner){
+    console.log(newProduction);
+
+    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !type_prod || !poster || !classification){
         console.log("Faltan datos");
         res.status(400).json({
             msg: "Faltan datos"
@@ -130,7 +132,7 @@ const createProduction = (req = request, res = response) => {
 
     newProduction.save().then(() => {
         res.status(200).json({
-            msg: "Usuario insertado",
+            msg: "Produccion insertada",
         });
     }).catch((error) => {
         res.status(500).json({
