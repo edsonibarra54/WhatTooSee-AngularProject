@@ -7,7 +7,7 @@ const commentsSchema = mongoose.Schema(
         id_production: String,
         comment: String,
         stars: Number
-    }
+    },{ versionKey: false }
 )
 
 module.exports = mongoose.model("comments", commentsSchema);

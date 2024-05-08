@@ -17,8 +17,10 @@ const productionsSchema = mongoose.Schema(
         new_serie: Boolean,
         type_prod: Number,
         poster: String,
-        banner:String
-    }
+        banner:String,
+        classification: String,
+        hasPoster: Boolean
+    },{ versionKey: false }
 )
 
 module.exports = mongoose.model("productions", productionsSchema);

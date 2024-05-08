@@ -6,39 +6,46 @@
         <div class="edit-Container">
             <form>
                 <div class="label">Type</div>
-                    <select class="dropdown" name="type">
-                        <option value="movie">Movie</option>
-                        <option value="series">Series</option>
-                    </select>
+                <select class="dropdown" name="type" id="typeSelect" [(ngModel)]="selectedType" (ngModelChange)="onTypeChange()">
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                </select>
                 <div class="label">Name of the production</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="text" [(ngModel)]="newProductionName" name="newProductionName" placeholder="Write here...">
                 <div class="label">Rating of the production</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="number" [(ngModel)]="newProductionRating" min="0" max="10" name="newProductionRating" placeholder="Write here...">
                 <div class="label">Genre</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="text" [(ngModel)]="newProductionGenre" name="newProductionGenre" placeholder="Write here...">
                 <div class="label">Rating</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="text" [(ngModel)]="newProductionClassification" name="newProductionClassification" placeholder="Write here...">
                 <div class="label">Director(s)</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="text" [(ngModel)]="newProductionDirector" name="newProductionDirector" placeholder="Write here...">
                 <div class="label">Writer(s)</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="text" [(ngModel)]="newProductionWriter" name="newProductionWriter" placeholder="Write here...">
                 <div class="label">Cast</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="text" [(ngModel)]="newProductionCast" name="newProductionCast" placeholder="Write here...">
                 <div class="label">Release Date</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="date" [(ngModel)]="newProductionRelease" name="newProductionRelease" placeholder="Write here...">
                 <div class="label">Runtime</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="number" [(ngModel)]="newProductionRuntime" min="1" max="500" name="newProductionRuntime" placeholder="Write here...">
                 <div class="label">Poster</div>
-                <input class="file-a" type="file" name="imagen">
-                <div class="label">Best Movies 2023</div>
-                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
-                <div class="label">Best Series 2023</div>
-                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
-                <div class="label">Premiere Movies</div>
-                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
-                <div class="label">New Series & Seasons</div>
-                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
-                <button id="add-Button">Add</button>
+                <input class="text" type="url" [(ngModel)]="newProductionPoster" name="newProductionPoster" placeholder="Write here...">
+                <div class="label">Banner</div>
+                <input type="checkbox" [(ngModel)]="newProductionshowBanner" name="showBanner">
+                <input class="text" type="url" *ngIf="newProductionshowBanner" [(ngModel)]="newProductionBanner" name="newProductionBanner" placeholder="Write here...">
+                <div *ngIf="selectedType === 'movie'">
+                    <div class="label">Movies of the Year</div>
+                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionBestMovie" name="newProductionBestMovie" value="opcion1">
+                    <div class="label">Premiere Movies</div>
+                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionPremierMovie" name="newProductionPremierMovie" value="opcion1">
+                </div>
+                <div *ngIf="selectedType === 'series'">
+                    <div class="label">Series of the Year</div>
+                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionBestSerie" name="newProductionBestSerie" value="opcion1">
+                    <div class="label">New Series & Seasons</div>
+                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionNewSerie" name="newProductionNewSerie" value="opcion1">
+                </div>
+                <button id="add-Button" (click)="onClickCreate()">Add</button>
             </form>
         </div>
         <div class="line"></div>
@@ -57,14 +64,14 @@
                 <div class="label">Id of the production</div>
                 <input class="text" type="text" placeholder="Write here...">
                 <div class="label">Type</div>
-                    <select class="dropdown" name="type">
-                        <option value="movie">Movie</option>
-                        <option value="series">Series</option>
-                    </select>
+                <select class="dropdown" name="type" id="typeSelect" [(ngModel)]="selectedType" (ngModelChange)="onTypeChange()">
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                </select>
                 <div class="label">Name of the production</div>
                 <input class="text" type="text" placeholder="Write here...">
                 <div class="label">Rating of the production</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="number" min="0" max="10" placeholder="Write here...">
                 <div class="label">Genre</div>
                 <input class="text" type="text" placeholder="Write here...">
                 <div class="label">Rating</div>
@@ -76,11 +83,22 @@
                 <div class="label">Cast</div>
                 <input class="text" type="text" placeholder="Write here...">
                 <div class="label">Release Date</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="date" placeholder="Write here...">
                 <div class="label">Runtime</div>
-                <input class="text" type="text" placeholder="Write here...">
+                <input class="text" type="number" min="0" max="500" placeholder="Write here...">
                 <div class="label">Poster</div>
-                <input type="file" name="imagen">
+                <input class="text" type="url" placeholder="Write here...">
+                <div class="label">Banner</div>
+                <input type="checkbox" name="showBanner">
+                <input class="text" type="url" placeholder="Write here...">
+                <div class="label">Movies of the Year</div>
+                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
+                <div class="label">Series of the Year</div>
+                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
+                <div class="label">Premiere Movies</div>
+                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
+                <div class="label">New Series & Seasons</div>
+                <input class="checkbox" type="checkbox" name="miCheckbox" value="opcion1">
                 <button id="add-Button">Edit</button>
             </form>
         </div>

@@ -4,8 +4,8 @@
         <div id="button-box">
             <div id="btn"></div>
             <div class="btn-Content">
-                <button type="button" class="toggle-btn" id="btn-Left">Movies</button>
-                <button type="button" class="toggle-btn" id="btn-Right">Series</button>
+                <button type="button" class="toggle-btn" id="btn-Left" (click)="changeType(1)">Movies</button>
+                <button type="button" class="toggle-btn" id="btn-Right" (click)="changeType(2)">Series</button>
             </div>
         </div>
     </div>
@@ -14,28 +14,19 @@
 <div id="search-Container">
     <div class="searchBox">
         <div class="box" id="box">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="filterProductions()">
             <a><i class="fas fa-search"></i></a>
         </div>
     </div>
     <div id="filters-Container">
-        <div class="filter">All</div>
-        <div class="filter">Action</div>
-        <div class="filter">Comedy</div>
-        <div class="filter">Romantic</div>
-        <div class="filter">Horror</div>
+        <button type="button" class="filter" (click)="changeGenre(1)">All</button>
+        <button type="button" class="filter" (click)="changeGenre(2)">Action</button>
+        <button type="button" class="filter" (click)="changeGenre(3)">Comedy</button>
+        <button type="button" class="filter" (click)="changeGenre(4)">Romantic</button>
+        <button type="button" class="filter" (click)="changeGenre(5)">Horror</button>
     </div>
 </div>
 <div class="line"></div>
 <div id="productions-Container">
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
-    <app-production-card class="production"></app-production-card>
+    <app-production-card class="production" *ngFor="let production of productions" [production]="production"></app-production-card>
 </div>

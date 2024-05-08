@@ -1,43 +1,43 @@
 <div id="poster-Container">
-    <div id="id-Material">Id = 1000</div>
+    <div id="id-Material" *ngIf="production">Id = {{production._id}}</div>
     <div id="poster">
-        <img id="poster-Image" src="../../../assets/KillersOfTheFlowerMoon.jpg">
+        <img id="poster-Image" *ngIf="production" [src]="production.poster">
     </div>
     <div id="name-Container">
-        <div id="title">Killers of the flower moon</div>
+        <div id="title" *ngIf="production">{{production.name}}</div>
         <div class="line"></div>
         <div id="cali-Container">
             <i class="fas fa-star" id="star"></i>
-            <div id="calificacion">10</div>
+            <div id="calificacion" *ngIf="production">{{production.rating}}</div>
         </div>
         <div class="line"></div>
         <div class="text-Container">
             <div class="charact">Genre:</div>
-            <div class="info" id="genre">Crime, Drama</div>
+            <div class="info" id="genre" *ngIf="production">{{production.genre}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Rating:</div>
-            <div class="info" id="rating">R</div>
+            <div class="info" id="rating" *ngIf="production">{{production.classification}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Director:</div>
-            <div class="info" id="director">Martin Scorsese</div>
+            <div class="info" id="director" *ngIf="production">{{production.director}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Writer:</div>
-            <div class="info" id="writer">Eric Roth, Martin Scorsese</div>
+            <div class="info" id="writer" *ngIf="production">{{production.writer}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Cast:</div>
-            <div class="info" id="cast">Leonardo DiCaprio, Robert De Niro, Jesse Plemons</div>
+            <div class="info" id="cast" *ngIf="production">{{production.cast}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Release Date:</div>
-            <div class="info" id="release">Oct 20, 2023</div>
+            <div class="info" id="release" *ngIf="production">{{production.release}}</div>
         </div>
         <div class="text-Container">
             <div class="charact">Runtime:</div>
-            <div class="info" id="runtime">3h 26m</div>
+            <div class="info" id="runtime" *ngIf="production">{{production.runtime}}</div>
         </div>
     </div>
 </div>
@@ -48,7 +48,7 @@
     <div id="label">Add a comment. (500 characters max.)</div>
     <div class="comment-Container">
         <div class="text">
-            <textarea id="text-Comment" placeholder="Search..." maxlength="500"></textarea>
+            <textarea id="text-Comment" placeholder="Comment..." maxlength="500"></textarea>
         </div>
     </div>
     <div id="cal-Selector">
@@ -59,15 +59,10 @@
             <i class="fas fa-star" (click)="selectStar($event)"></i>
             <i class="fas fa-star" (click)="selectStar($event)"></i>
         </div>
-        <button id="submit">Submit</button>
+        <button id="submit" (click)="submitComment()">Submit</button>
     </div>
 </div>
 <div class="line"></div>
-<div id="commentaries-Container">
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
-    <app-commentary-box class="comment-Container"></app-commentary-box>
+<div id="commentaries-Container" *ngFor="let comment of comments">
+    <app-commentary-box class="comment-Container" [comment]="comment"></app-commentary-box>
 </div>
