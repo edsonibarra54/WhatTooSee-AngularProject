@@ -71,8 +71,25 @@ const createComment = (req = request, res = response) => {
     })
 }
 
+const deleteComments = (req = request, res = response) => {
+    const { id_production } = req.body;
+
+    console.log(id_production);
+
+    comments.deleteMany({ id_production: id_production }).then((result) => {
+        res.status(200).json({
+            msg: "Comments deleted successfully"
+        });
+    }).catch(() => {
+        res.status(500).json({
+            msg: "Error deleting comments"
+        });
+    });
+}
+
 module.exports = {
     getCommentsUser,
     getCommentsProduction,
-    createComment
+    createComment,
+    deleteComments
 }
