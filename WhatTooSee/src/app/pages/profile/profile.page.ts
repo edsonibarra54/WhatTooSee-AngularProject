@@ -26,7 +26,6 @@ export class ProfilePage {
      const url = this.location.path();
      const segments = url.split('/');
      this.userId = segments[segments.length - 1];
-     console.log( this.userId);
      this.getMySelf();
      this.fetchProfileData(this.userId);
      this.fetchProfileCommentsData(this.userId);

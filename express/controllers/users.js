@@ -82,7 +82,8 @@ const registerUser = (req = request, res = response) => {
         description: "", 
         follow: 0, 
         followers: 0, 
-        is_admin: 0 
+        is_admin: 0,
+        following: []
     })
 
     newUser.save().then(
@@ -101,9 +102,32 @@ const registerUser = (req = request, res = response) => {
         
 }
 
+const updateFollowing = (req = request, res = response) => {
+    const { id } = req.params;
+    const { following } = req.body;
+
+    if(!following || !id){
+        res.status(400).json({
+            msg: "Faltan datos"
+        })
+        return;
+    }
+
+    users.updateOne({_id: id}, { following: following }).then(()=>{
+        res.status(200).json({
+            msg:"Elemento actualizado con exito"
+        });
+    }).catch(()=>{
+        res.status(500).json({
+            msg:"Error al actualizar el elemento"
+        });
+    })
+};
+
 module.exports = {
     getProfile,
     getProfileId,
     authenticateUser,
-    registerUser
+    registerUser,
+    updateFollowing
 }

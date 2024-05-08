@@ -8,4 +8,5 @@ export interface Profile {
     follow: number;
     followers: number;
     is_admin: number;
+    following:string[];
   }

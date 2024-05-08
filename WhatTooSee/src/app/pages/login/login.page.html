@@ -2,12 +2,12 @@
 <div class="subcontainer">
     <div class="container" id="container">
         <div [@action_up]="userAction" class="form-Container sign-up">
-            <form>
+            <form (ngSubmit)="signUp()">
                 <h1>Create Account</h1>
-                <input type="text" placeholder="User">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign Up</button>
+                <input type="text" placeholder="User" name="username" [(ngModel)]="usernameRegister">
+                <input type="email" placeholder="Email" name="email" [(ngModel)]="emailRegister">
+                <input type="password" placeholder="Password" name="password" [(ngModel)]="passwordRegister">
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div [@action_in]="userAction" class="form-Container sign-in">

@@ -55,6 +55,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class LoginPage implements OnInit, OnDestroy {
   email: string = "";
   password: string = "";
+  emailRegister: string ="";
+  usernameRegister: string ="";
+  passwordRegister: string ="";
   userAction: string = "login";
 
   constructor(private renderer: Renderer2, private router: Router, private http : HttpClient, private loggeduser: loggedUser) {}
@@ -135,5 +138,10 @@ export class LoginPage implements OnInit, OnDestroy {
         console.error('Error al insertar el usuario', error);
       }
     });
+  }
+
+  signUp(): void {
+    this.registerUser(this.usernameRegister, this.emailRegister, this.passwordRegister);
+    this.fetchAuthUser(this.emailRegister, this.passwordRegister);
   }
 }

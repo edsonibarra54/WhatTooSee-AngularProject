@@ -1,8 +1,11 @@
-<div  id="profile-Container">
-    <div id="corazon" class="corazon-vacio" *ngIf="userlog.getIsLogged()">
-        <i class="fas fa-heart" (click)="selectHeart($event)"></i>
+    <div  id="profile-Container">
+        <div id="corazon" *ngIf="userlog.getIsLogged()">
+        <i class="fas fa-heart"
+        [ngClass]="{'corazon-lleno': isFollowing, 'corazon-vacio': !isFollowing}"
+        [ngStyle]="{'color': isFollowing ? '#ffd700' : '#e2e2e2'}"
+        (click)="toggleFollow()"></i>
     </div>
-    
+
     <div id="profile-Image">
         <img id="profileImg" *ngIf="user?.photo" [src]="user?.photo">
     </div>

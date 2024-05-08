@@ -10,7 +10,8 @@ const userSchema = mongoose.Schema(
         description: String,
         follow: Number,
         followers: Number,
-        is_admin: Number
+        is_admin: Number,
+        following: [String],
     },{ versionKey: false }
 );
 
