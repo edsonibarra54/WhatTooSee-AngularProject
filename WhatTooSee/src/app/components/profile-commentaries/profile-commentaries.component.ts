@@ -31,8 +31,8 @@ export class ProfileCommentariesComponent {
     }
   }
 
-  redirectToProduction() {
-    this.router.navigateByUrl('/material');
+  redirectToProduction(productionId: string): void {
+    this.router.navigate(['/material', productionId]);
   }
 
   getStarsArray(rating: Number): Number[] {

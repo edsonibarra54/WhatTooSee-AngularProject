@@ -50,10 +50,14 @@ export class ProfileInformationComponent implements OnInit{
       tmpArray = this.tmpUser.following.filter(cadena => cadena !== this.user!._id);
       console.log(tmpArray);
       this.updateFollowing(tmpArray, this.userlog.getData()._id);
+      this.updateFollowers(-1, this.user!._id);
+      this.user!.followers = this.user!.followers-1;
     } else {
       tmpArray = this.tmpUser.following;
       tmpArray.push(this.user._id);
       this.updateFollowing(tmpArray, this.userlog.getData()._id);
+      this.updateFollowers(1, this.user!._id);
+      this.user!.followers = this.user!.followers+1;
     }
     this.isFollowing = !this.isFollowing;
   }
@@ -66,7 +70,7 @@ export class ProfileInformationComponent implements OnInit{
         return this.tmpUser.following.includes(this.user._id);
     }
     return false;
-}
+  }
 
   fetchProfileData(): void {
     const url = "http://localhost:8080/api/users/getUserId?id=" + this.userlog.getData()._id;
@@ -88,6 +92,18 @@ export class ProfileInformationComponent implements OnInit{
     this.http.put(url, { following: following, id: id}).subscribe({
       next: (response: any) => {
         console.log('following actualizado con éxito', response);
+      },
+      error: (error: any) => {
+        console.error('Error al actualizar el usuario', error);
+      }
+    });
+  }
+
+  updateFollowers(increment:Number,  id: string){
+    const url = "http://localhost:8080/api/users/updateFollowersCount/" + id + "/" + increment;
+    this.http.put(url, {}).subscribe({
+      next: (response: any) => {
+        console.log('followers actualizado con éxito', response);
       },
       error: (error: any) => {
         console.error('Error al actualizar el usuario', error);

@@ -1,5 +1,5 @@
     <div  id="profile-Container">
-        <div id="corazon" *ngIf="userlog.getIsLogged()">
+        <div id="corazon" *ngIf="userlog.getIsLogged() && user?._id !== userlog.getData()._id">
         <i class="fas fa-heart"
         [ngClass]="{'corazon-lleno': isFollowing, 'corazon-vacio': !isFollowing}"
         [ngStyle]="{'color': isFollowing ? '#ffd700' : '#e2e2e2'}"
