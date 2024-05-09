@@ -60,52 +60,57 @@
             </form>
         </div>
         <div class="line"></div>
-        <div class="subtitle">Change Production</div>
+        <div class="subtitle">Update Production</div>
         <div class="edit-Container">
             <form>
                 <div class="label">Id of the production</div>
-                <input class="text" type="text" placeholder="Write here...">
-                <div class="label">Type</div>
-                <select class="dropdown" name="type" id="typeSelect" [(ngModel)]="editProductionSelectedType" (ngModelChange)="onTypeChange()">
-                    <option value="movie">Movie</option>
-                    <option value="series">Series</option>
-                </select>
-                <div class="label">Name of the production</div>
-                <input class="text" type="text" placeholder="Write here...">
-                <div class="label">Rating of the production</div>
-                <input class="text" type="number" min="0" max="10" placeholder="Write here...">
-                <div class="label">Genre</div>
-                <input class="text" type="text" placeholder="Write here...">
-                <div class="label">Rating</div>
-                <input class="text" type="text" placeholder="Write here..." >
-                <div class="label">Director(s)</div>
-                <input class="text" type="text" placeholder="Write here...">
-                <div class="label">Writer(s)</div>
-                <input class="text" type="text" placeholder="Write here...">
-                <div class="label">Cast</div>
-                <input class="text" type="text" placeholder="Write here...">
-                <div class="label">Release Date</div>
-                <input class="text" type="date" placeholder="Write here...">
-                <div class="label">Runtime</div>
-                <input class="text" type="number" min="0" max="500" placeholder="Write here...">
-                <div class="label">Poster</div>
-                <input class="text" type="url" placeholder="Write here...">
-                <div class="label">Banner</div>
-                <input type="checkbox" name="showBanner">
-                <input class="text" type="url" placeholder="Write here...">
-                <div *ngIf="editProductionSelectedType === 'movie'">
-                    <div class="label">Movies of the Year</div>
-                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionBestMovie" name="newProductionBestMovie" value="opcion1">
-                    <div class="label">Premiere Movies</div>
-                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionPremierMovie" name="newProductionPremierMovie" value="opcion1">
+                <div class="input-group">
+                    <input class="text" type="text" [(ngModel)]="updateProductionID" name="updateProductionID" placeholder="Write here...">
+                    <button class="get-info-button" (click)="onClickSearch()">Get Info</button>
                 </div>
-                <div *ngIf="editProductionSelectedType === 'series'">
-                    <div class="label">Series of the Year</div>
-                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionBestSerie" name="newProductionBestSerie" value="opcion1">
-                    <div class="label">New Series & Seasons</div>
-                    <input class="checkbox" type="checkbox" [(ngModel)]="newProductionNewSerie" name="newProductionNewSerie" value="opcion1">
+                <div *ngIf="isFound">
+                    <div class="label">Type</div>
+                    <select class="dropdown" name="type" id="updateTypeSelect" [(ngModel)]="updateProductionSelectedType" (ngModelChange)="onTypeChange()">
+                        <option value="movie">Movie</option>
+                        <option value="series">Series</option>
+                    </select>
+                    <div class="label">Name of the production</div>
+                    <input class="text" type="text" [(ngModel)]="updateProductionName" name="updateProductionName" placeholder="Write here...">
+                    <div class="label">Rating of the production</div>
+                    <input class="text" type="number" min="0" max="10" [(ngModel)]="updateProductionRating" name="updateProductionRating" placeholder="Write here...">
+                    <div class="label">Genre</div>
+                    <input class="text" type="text" [(ngModel)]="updateProductionGenre" name="updateProductionGenre" placeholder="Write here...">
+                    <div class="label">Rating</div>
+                    <input class="text" type="text" [(ngModel)]="updateProductionRating" name="updateProductionRating" placeholder="Write here...">
+                    <div class="label">Director(s)</div>
+                    <input class="text" type="text" [(ngModel)]="updateProductionDirector" name="updateProductionDirector" placeholder="Write here...">
+                    <div class="label">Writer(s)</div>
+                    <input class="text" type="text" [(ngModel)]="updateProductionWriter" name="updateProductionWriter" placeholder="Write here...">
+                    <div class="label">Cast</div>
+                    <input class="text" type="text" [(ngModel)]="updateProductionCast" name="updateProductionCast" placeholder="Write here...">
+                    <div class="label">Release Date</div>
+                    <input class="text" type="date" [(ngModel)]="updateProductionRelease" name="updateProductionRelease" placeholder="Write here...">
+                    <div class="label">Runtime</div>
+                    <input class="text" type="number" min="0" max="500" [(ngModel)]="updateProductionRuntime" name="updateProductionRuntime" placeholder="Write here...">
+                    <div class="label">Poster</div>
+                    <input class="text" type="url" [(ngModel)]="updateProductionPoster" name="updateProductionPoster" placeholder="Write here...">
+                    <div class="label">Banner</div>
+                    <input type="checkbox" [(ngModel)]="updateProductionshowBanner" name="showBanner" >
+                    <input class="text" type="url" *ngIf="updateProductionshowBanner" [(ngModel)]="updateProductionBanner" name="updateProductionBanner" placeholder="Write here...">
+                    <div *ngIf="updateProductionSelectedType === 'movie'">
+                        <div class="label">Movies of the Year</div>
+                        <input class="checkbox" type="checkbox" [(ngModel)]="updateProductionBestMovie" name="updateProductionBestMovie" value="opcion1">
+                        <div class="label">Premiere Movies</div>
+                        <input class="checkbox" type="checkbox" [(ngModel)]="updateProductionPremierMovie" name="updateProductionPremierMovie" value="opcion1">
+                    </div>
+                    <div *ngIf="updateProductionSelectedType === 'series'">
+                        <div class="label">Series of the Year</div>
+                        <input class="checkbox" type="checkbox" [(ngModel)]="updateProductionBestSerie" name="updateProductionBestSerie" value="opcion1">
+                        <div class="label">New Series & Seasons</div>
+                        <input class="checkbox" type="checkbox" [(ngModel)]="updateProductionNewSerie" name="updateProductionNewSerie" value="opcion1">
+                    </div>
+                    <button id="add-Button" (click)="onClickUpdate()">Edit</button>
                 </div>
-                <button id="add-Button">Edit</button>
             </form>
         </div>
     </div>

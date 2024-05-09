@@ -98,12 +98,12 @@
   ],
   "release": "2023-08-31",
   "runtime": 30,
-  "best_movie": true,
-  "best_serie": false,
-  "premier_movie": true,
-  "new_serie": false,
-  "type_prod": 1,
-  "poster": "https://pics.filmaffinity.com/adventure_time_fionna_cake-414715608-large.jpg",
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BNDhjMDk2OTEtM2NhOC00NDNjLWI1ZjgtMWZiMDFkOTFjMDhmXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_FMjpg_UY711_.jpg",
   "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmnQYpTbDHRZNR5UFMWwBzDR3rMzA3p7330k5NgCarw&s",
   "classification": "TV-14",
   "hasBanner": true
@@ -129,8 +129,60 @@
   "premier_movie": true,
   "new_serie": false,
   "type_prod": 1,
-  "poster": "https://pics.filmaffinity.com/killers_of_the_flower_moon-211527208-large.jpg",
+  "poster": "https://m.media-amazon.com/images/M/MV5BYTMyNWU5M2UtYjlhNi00NGRjLWEwMDQtNWFhMjI0OTE2YTQwXkEyXkFqcGdeQXVyMzUxNTM4ODc@._V1_FMjpg_UY457_.jpg",
   "banner": "https://flxt.tmsimg.com/assets/p22972321_v_h10_aa.jpg",
   "classification": "R",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663c56feaae258b932e4be9d"
+  },
+  "name": "Oppenheimer",
+  "rating": 8.3,
+  "genre": [
+    "Biography, History, Drama"
+  ],
+  "director": "Christopher Nolan",
+  "writer": " Christopher Nolan, Kai Bird, Martin Sherwin",
+  "cast": [
+    "Cillian Murphy, Emily Blunt, Matt Damon"
+  ],
+  "release": "2023-07-21",
+  "runtime": 180,
+  "best_movie": true,
+  "best_serie": false,
+  "premier_movie": true,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://pics.filmaffinity.com/oppenheimer-828933592-large.jpg",
+  "banner": "https://www.susangranger.com/wp-content/uploads/2023/07/oppy.jpg",
+  "classification": "R",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663c5906aae258b932e4beaa"
+  },
+  "name": "X-Men '97",
+  "rating": 9,
+  "genre": [
+    "Action, Adventure, Sci-Fi, Animation"
+  ],
+  "director": "Beau DeMayo",
+  "writer": "Stan Lee, Jack Kirby, Beau DeMayo",
+  "cast": [
+    "Cal Dodd, George Buza, Holly Chou"
+  ],
+  "release": "2024-03-20",
+  "runtime": 22,
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://pics.filmaffinity.com/x_men_97-172646853-large.jpg",
+  "banner": "https://deadline.com/wp-content/uploads/2024/03/xmen-97-disney-plus-marvel-animation.jpg",
+  "classification": "TV-PG",
   "hasBanner": true
 }]
