@@ -1,0 +1,135 @@
+[{
+  "_id": {
+    "$oid": "662d8b419ee31722933e420d"
+  },
+  "id_user": "662aefb985e8bdc4b52031e3",
+  "id_production": "662c267e796c122a33db59bb",
+  "comment": "Esta película me mantuvo al borde de mi asiento toda la noche. ¡Fue increíblemente emocionante!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e420e"
+  },
+  "id_user": "662aefb985e8bdc4b52031e3",
+  "id_production": "662c267e796c122a33db59bc",
+  "comment": "¡Qué película tan sorprendente! No pude apartar la mirada de la pantalla en ningún momento.",
+  "stars": 4
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e420f"
+  },
+  "id_user": "662aefb985e8bdc4b52031e3",
+  "id_production": "662c267e796c122a33db59bd",
+  "comment": "Esta película me conmovió hasta lo más profundo. ¡La recomendaría a cualquiera que busque una experiencia emotiva!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4210"
+  },
+  "id_user": "662aefb985e8bdc4b52031e4",
+  "id_production": "662c267e796c122a33db59bb",
+  "comment": "Los efectos especiales fueron impresionantes. ¡Me dejaron sin aliento!",
+  "stars": 4
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4211"
+  },
+  "id_user": "662aefb985e8bdc4b52031e4",
+  "id_production": "662c267e796c122a33db59bc",
+  "comment": "La trama era tan intrigante que no podía apartar la mirada de la pantalla. ¡Una experiencia cinematográfica fantástica!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4212"
+  },
+  "id_user": "662aefb985e8bdc4b52031e4",
+  "id_production": "662c267e796c122a33db59bd",
+  "comment": "La actuación fue sobresaliente. ¡Cada actor realmente trajo vida a sus personajes!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4213"
+  },
+  "id_user": "662aefb985e8bdc4b52031e5",
+  "id_production": "662c267e796c122a33db59bb",
+  "comment": "La cinematografía fue impresionante. ¡Cada escena estaba bellamente capturada!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4214"
+  },
+  "id_user": "662aefb985e8bdc4b52031e5",
+  "id_production": "662c267e796c122a33db59bc",
+  "comment": "Me encantó el desarrollo de los personajes. ¡Cada uno tenía una historia fascinante que contar!",
+  "stars": 4
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4215"
+  },
+  "id_user": "662aefb985e8bdc4b52031e5",
+  "id_production": "662c267e796c122a33db59bd",
+  "comment": "No puedo evitar amar esta película. ¡Es absolutamente brillante en todos los sentidos!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4216"
+  },
+  "id_user": "662d83c99ee31722933e41f1",
+  "id_production": "662c267e796c122a33db59bb",
+  "comment": "Los giros inesperados en la trama me mantuvieron enganchado desde el principio hasta el final. ¡Una experiencia cinematográfica emocionante!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4217"
+  },
+  "id_user": "662d83c99ee31722933e41f1",
+  "id_production": "662c267e796c122a33db59bc",
+  "comment": "Esta película fue una montaña rusa emocional. ¡Ríes, lloras y te mantienes al borde de tu asiento en todo momento!",
+  "stars": 5
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4218"
+  },
+  "id_user": "662d83c99ee31722933e41f1",
+  "id_production": "662c267e796c122a33db59bd",
+  "comment": "Me encantó la música de fondo. ¡Creó la atmósfera perfecta para la película!",
+  "stars": 4
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e4219"
+  },
+  "id_user": "662d83c99ee31722933e41f2",
+  "id_production": "662c267e796c122a33db59bb",
+  "comment": "Los personajes eran tan convincentes que sentí como si estuviera viviendo dentro de la película. ¡Increíble!",
+  "stars": 4
+},
+{
+  "_id": {
+    "$oid": "662d8b419ee31722933e421a"
+  },
+  "id_user": "662d83c99ee31722933e41f2",
+  "id_production": "662c267e796c122a33db59bc",
+  "comment": "Me encantó cómo la película exploró temas profundos de la condición humana. ¡Fue realmente conmovedora!",
+  "stars": 4
+},
+{
+  "_id": {
+    "$oid": "663093d521eeef0f6a0dd46d"
+  },
+  "id_user": "662d83c99ee31722933e41f1",
+  "id_production": "662c267e796c122a33db59bc",
+  "comment": "Esta serie es maravillosa de inicio a fin, tiene unos personajes increíbles y una historia atrapante.",
+  "stars": 5
+}]

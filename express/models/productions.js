@@ -19,7 +19,7 @@ const productionsSchema = mongoose.Schema(
         poster: String,
         banner:String,
         classification: String,
-        hasPoster: Boolean
+        hasBanner: Boolean
     },{ versionKey: false }
 )
 

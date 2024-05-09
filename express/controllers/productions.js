@@ -73,8 +73,6 @@ const getProductionsByType = (req = request, res = response) => {
         query.genre = genre;
     }
 
-    console.log(query);
-
     productions.find(query)
         .then((result) => {
             if (result.length > 0) {
@@ -99,7 +97,7 @@ const getProductionsByType = (req = request, res = response) => {
 };
 
 const createProduction = (req = request, res = response) => {
-    const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, banner, classification } = req.body;
+    const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, hasBanner, banner, classification } = req.body;
 
     const newProduction = productions({
         _id: new mongoose.Types.ObjectId(), 
@@ -118,12 +116,13 @@ const createProduction = (req = request, res = response) => {
         type_prod,
         poster,
         banner,
-        classification
+        classification,
+        hasBanner
     })
 
     console.log(newProduction);
 
-    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !type_prod || !poster || !banner || !classification){
+    if(!name || !rating || !genre || !director || !writer || !cast || !release || !runtime || !type_prod || !poster || !classification){
         console.log("Faltan datos");
         res.status(400).json({
             msg: "Faltan datos"
@@ -133,7 +132,7 @@ const createProduction = (req = request, res = response) => {
 
     newProduction.save().then(() => {
         res.status(200).json({
-            msg: "Usuario insertado",
+            msg: "Produccion insertada",
         });
     }).catch((error) => {
         res.status(500).json({
@@ -143,10 +142,33 @@ const createProduction = (req = request, res = response) => {
     });
 }
 
+const deleteProduction = (req = request, res = response) => {
+    const { _id } = req.body;
+
+    const objectId = ObjectId.isValid(_id) ? new ObjectId(_id) : null;
+    
+    productions.deleteOne({ _id: objectId }).then((result) => {
+        if (result.deletedCount === 1) {
+            res.status(200).json({
+                msg: "Production deleted successfully"
+            });
+        } else {
+            res.status(404).json({
+                msg: "Production with the provided ID does not exist"
+            });
+        }
+    }).catch(() => {
+        res.status(500).json({
+            msg: "Error deleting production"
+        });
+    });
+}
+
 module.exports = {
     getProductions,
     getProduction,
     getProductionById,
     getProductionsByType,
-    createProduction
+    createProduction,
+    deleteProduction
 }
