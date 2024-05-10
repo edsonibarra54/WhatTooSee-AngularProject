@@ -1,20 +1,46 @@
-import { Component, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
 import Splide from '@splidejs/splide';
+import { Production } from '../../interfaces/production.interface';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-banner-carousel',
   standalone: true,
-  imports: [],
+  imports: [ CommonModule ],
   templateUrl: './banner-carousel.component.html',
   styleUrl: './banner-carousel.component.css'
 })
 export class BannerCarouselComponent {
+  bannerProductions: Production[] = [];
   splideInstances: Splide[] = [];
+  initialized: boolean = false;
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef ) {}
+  constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef, private http: HttpClient ) {}
+
+  fetchProductionsData(): void{
+    const url = "http://localhost:8080/api/productions/getBannerProductions";
+    console.log(url);
+    this.http.get<any>(url).subscribe(
+      (response) => {
+        console.log(response);
+        if (response) {
+          this.bannerProductions = response.result.map((production: any) => ({
+            _id: production._id,
+            banner: production.banner
+          }));
+        } else {
+          this.bannerProductions = [];
+        }
+      },
+      (error) => {
+        console.log('Error fetching production data:', error);
+      }
+    );
+  }
 
   ngAfterViewInit(): void {
-    this.initializeSplide();
+    this.fetchProductionsData();
 
     const banner = this.elRef.nativeElement.querySelector('#Banner');
     const splideContainer = this.elRef.nativeElement.querySelector('#splideContainer');
@@ -30,6 +56,13 @@ export class BannerCarouselComponent {
     });
 
     observerMenuTop.observe(banner);
+  }
+
+  ngAfterViewChecked(): void {
+    if (!this.initialized && this.bannerProductions.length > 0) {
+      this.initializeSplide();
+      this.initialized = true;
+    }
   }
 
   initializeSplide(): void {

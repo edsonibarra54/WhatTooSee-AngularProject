@@ -100,7 +100,33 @@ const getProductionsByType = (req = request, res = response) => {
                 result: []
             });
         });
-};
+}
+
+const getBannerProductions = (req = request, res = response) => {
+    let query = {};
+    query.hasBanner = true;
+
+    productions.find(query).then(
+        (result) => {
+            if (result.length > 0) {
+                res.status(200).json({
+                    msg: "Productions found",
+                    result
+                });
+                console.log(result);
+            } else {
+                res.status(200).json({
+                    msg: "No productions found for the specified type",
+                    result: []
+                });
+            }
+        }).catch((error) => {
+            res.status(500).json({
+                msg: "Error",
+                result: []
+            });
+        });
+}
 
 const createProduction = (req = request, res = response) => {
     const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, hasBanner, banner, classification } = req.body;
@@ -216,6 +242,7 @@ module.exports = {
     getProduction,
     getProductionById,
     getProductionsByType,
+    getBannerProductions,
     createProduction,
     deleteProduction,
     updateProduction
