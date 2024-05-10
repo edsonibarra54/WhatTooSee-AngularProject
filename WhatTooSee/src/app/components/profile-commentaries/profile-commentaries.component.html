@@ -1,7 +1,7 @@
 <div id="commentaries-Container">
     <div class="comment-Container">
         <div class="comment-Info">
-            <div class="poster-Container" (click)="redirectToProduction()">
+            <div class="poster-Container" (click)="redirectToProduction(comment!.id_production)">
                 <img class="posterImage" *ngIf="production?.poster" [src]="production.poster">
             </div>
             <div class="cal-Container">

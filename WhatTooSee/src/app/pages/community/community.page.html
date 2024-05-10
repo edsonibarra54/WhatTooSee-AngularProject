@@ -3,7 +3,7 @@
 <div id="search-Container">
     <div class="searchBox">
         <div class="box" id="box">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="filterUsers()">
             <a><i class="fas fa-search"></i></a>
         </div>
     </div>

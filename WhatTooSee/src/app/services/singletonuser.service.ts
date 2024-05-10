@@ -21,6 +21,7 @@ export class loggedUser {
         follow: -1,
         followers: -1,
         is_admin: -1,
+        following: []
       };
   }
 
@@ -38,7 +39,6 @@ export class loggedUser {
   }
 
   isAdmin(): boolean {
-    console.log(this.loggedUser.is_admin);
     if(this.loggedUser.is_admin < 1) 
       return false;
     else 
@@ -56,6 +56,7 @@ export class loggedUser {
         follow: -1,
         followers: -1,
         is_admin: -1,
+        following: []
       };
   }
 

@@ -1,5 +1,7 @@
 <div id="page-Container">
-    <app-profile-information [user]="profile"></app-profile-information>
+    <ng-container *ngIf="profile">
+        <app-profile-information [user]="profile"></app-profile-information>
+    </ng-container>
     <button id="editProfile" (click)="redirectToEditProfile()" *ngIf="mySelf">Edit profile</button>
     <div class="line"></div>
     <div *ngFor="let comment of comments">
