@@ -2,6 +2,10 @@
     display: none;
 }
 
+.poster{
+    cursor: pointer;
+}
+
 @media screen and (min-width:1024px) 
 {
     #posterCarouselBase{

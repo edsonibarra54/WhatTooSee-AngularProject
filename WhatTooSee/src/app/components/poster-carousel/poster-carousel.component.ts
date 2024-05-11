@@ -1,19 +1,24 @@
 import { Component, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef, Input } from '@angular/core';
 import Splide from '@splidejs/splide';
+import { Production } from '../../interfaces/production.interface';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poster-carousel',
   standalone: true,
-  imports: [],
+  imports: [ CommonModule ],
   templateUrl: './poster-carousel.component.html',
   styleUrl: './poster-carousel.component.css'
 })
 export class PosterCarouselComponent {
   @Input() carouselId: string = 'movieSlider';
+  @Input() productions: Production[] = [];
 
   splideInstances: Splide[] = [];
+  initialized: boolean = false;
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef ) {}
+  constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef, private router: Router ) {}
 
   ngAfterViewInit(): void {
     this.initializeSplide();
@@ -60,5 +65,9 @@ export class PosterCarouselComponent {
     });
 
     this.splideInstances = [];
+  }
+
+  redirectToProduction(productionId: string): void {
+    this.router.navigate(['/material', productionId]);
   }
 }

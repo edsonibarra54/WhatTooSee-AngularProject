@@ -13,6 +13,10 @@
     width: 0;
 }
 
+.bannerImage{
+    cursor: pointer;
+}
+
 @media screen and (min-width:1024px) 
 {
     #Banner{

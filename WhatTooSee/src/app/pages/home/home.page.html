@@ -1,21 +1,19 @@
 <app-banner-carousel></app-banner-carousel>
 <div class="line"></div>
-<div class="subtitle">
-    Las mejores peliculas del 2023
+<div *ngIf="productionsClassified">
+    <div class="subtitle">Best movies of 2023</div>
+    <app-poster-carousel [carouselId]="'movieSlider'" [productions]="bestMovies"></app-poster-carousel>
+    <div class="line"></div>
+  
+    <div class="subtitle">Best series of 2023</div>
+    <app-poster-carousel [carouselId]="'movieSlider2'" [productions]="bestSeries"></app-poster-carousel>
+    <div class="line"></div>
+  
+    <div class="subtitle">Premiere movies</div>
+    <app-poster-carousel [carouselId]="'movieSlider3'" [productions]="premiereMovies"></app-poster-carousel>
+    <div class="line"></div>
+  
+    <div class="subtitle">New series and seasons</div>
+    <app-poster-carousel [carouselId]="'movieSlider4'" [productions]="newSeries"></app-poster-carousel>
+    <div class="line"></div>
 </div>
-<app-poster-carousel [carouselId]="'movieSlider'"></app-poster-carousel>
-<div class="line"></div>
-<div class="subtitle">
-    Las mejores series del 2023
-</div>
-<app-poster-carousel [carouselId]="'movieSlider2'"></app-poster-carousel>
-<div class="line"></div>
-<div class="subtitle">
-    Peliculas estreno
-</div>
-<app-poster-carousel [carouselId]="'movieSlider3'"></app-poster-carousel>
-<div class="line"></div>
-<div class="subtitle">
-    Nuevas series y temporadas
-</div>
-<app-poster-carousel [carouselId]="'movieSlider4'"></app-poster-carousel>

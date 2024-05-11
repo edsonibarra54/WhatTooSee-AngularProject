@@ -3,6 +3,7 @@ import Splide from '@splidejs/splide';
 import { Production } from '../../interfaces/production.interface';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-banner-carousel',
@@ -16,14 +17,12 @@ export class BannerCarouselComponent {
   splideInstances: Splide[] = [];
   initialized: boolean = false;
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef, private http: HttpClient ) {}
+  constructor(private elRef: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef, private http: HttpClient, private router: Router ) {}
 
   fetchProductionsData(): void{
     const url = "http://localhost:8080/api/productions/getBannerProductions";
-    console.log(url);
     this.http.get<any>(url).subscribe(
       (response) => {
-        console.log(response);
         if (response) {
           this.bannerProductions = response.result.map((production: any) => ({
             _id: production._id,
@@ -98,5 +97,9 @@ export class BannerCarouselComponent {
     });
 
     this.splideInstances = [];
+  }
+
+  redirectToProduction(productionId: string): void {
+    this.router.navigate(['/material', productionId]);
   }
 }

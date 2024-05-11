@@ -4,171 +4,18 @@
             <div class="splide__arrows"></div>
             <div class="splide__track" id="splideContainer">
                 <ul class="splide__list">
-                    <li class="splide__slide">
+                    <li class="splide__slide" *ngFor="let production of productions">
                         <div class="posterContainer">
                             <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/KillersOfTheFlowerMoon.jpg">
+                            <div class="poster" (click)="redirectToProduction(production._id)">
+                                <img class="posterImage" [src]="production.poster">
                                 <div class="gradient"></div>
                             </div>
                             <div class="posterInfo">
-                                <div class="posterTitle">Killers of the flower moon</div>
+                                <div class="posterTitle">{{production.name}}</div>
                                 <div class="posterCali">
                                     <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/TMNT.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Las tortugas ninja: Caos mutante</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/Oppenheimer3.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Oppenheimer</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/MarioBros.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Mario Bros: La pelicula</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/JohnWick4.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">John Wick 4</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/Babylon.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Babylon</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/BeauIsAfraid.jpeg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Beau is afraid</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/Barbie.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Barbie</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/Elemental.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Elemental</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
-                                </div>
-                            </div>
-                            <div class="whiteLine"></div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="posterContainer">
-                            <div class="whiteLine"></div>
-                            <div class="poster">
-                                <img class="posterImage" src="../../../assets/SpidermanATSV.jpg">
-                                <div class="gradient"></div>
-                            </div>
-                            <div class="posterInfo">
-                                <div class="posterTitle">Spiderman: Across the spiderverse</div>
-                                <div class="posterCali">
-                                    <i class="fas fa-star"></i>
-                                    <div class="calificacion">10</div>
+                                    <div class="calificacion">{{production.rating}}</div>
                                 </div>
                             </div>
                             <div class="whiteLine"></div>

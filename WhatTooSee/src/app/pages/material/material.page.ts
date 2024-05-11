@@ -24,7 +24,6 @@ export class MaterialPage {
     const url = this.location.path();
     const segments = url.split('/');
     this.productionId = segments[segments.length - 1];
-    console.log(this.productionId);
     this.fetchProductionData(this.productionId);
     this.fetchProductionCommentsData(this.productionId);
   }
@@ -85,8 +84,8 @@ export class MaterialPage {
   
       this.http.post<any>(url, commentData).subscribe(
         (response) => {
-          console.log('Comment submitted successfully:', response);
           this.fetchProductionCommentsData(this.productionId);
+          area.value = "";
         },
         (error) => {
           console.log('Error submitting comment:', error);
