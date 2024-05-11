@@ -44,7 +44,8 @@ export class ProfileCommentariesComponent {
     this.http.get(url).subscribe(
       {
         next: (response: any) =>{
-          this.production = response.result;
+          console.log(response);
+          this.production = response.production;
         },
         error: (error: any) => {
           console.log(error);
