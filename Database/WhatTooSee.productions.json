@@ -98,13 +98,13 @@
   ],
   "release": "2023-08-31",
   "runtime": 30,
-  "best_movie": true,
-  "best_serie": false,
-  "premier_movie": true,
-  "new_serie": false,
-  "type_prod": 1,
-  "poster": "https://pics.filmaffinity.com/adventure_time_fionna_cake-414715608-large.jpg",
-  "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmnQYpTbDHRZNR5UFMWwBzDR3rMzA3p7330k5NgCarw&s",
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BNDhjMDk2OTEtM2NhOC00NDNjLWI1ZjgtMWZiMDFkOTFjMDhmXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_FMjpg_UY711_.jpg",
+  "banner": "https://i.pinimg.com/originals/36/ee/49/36ee494103c7bed1f93fec311f6f37fc.jpg",
   "classification": "TV-14",
   "hasBanner": true
 },
@@ -129,8 +129,294 @@
   "premier_movie": true,
   "new_serie": false,
   "type_prod": 1,
-  "poster": "https://pics.filmaffinity.com/killers_of_the_flower_moon-211527208-large.jpg",
+  "poster": "https://m.media-amazon.com/images/M/MV5BYTMyNWU5M2UtYjlhNi00NGRjLWEwMDQtNWFhMjI0OTE2YTQwXkEyXkFqcGdeQXVyMzUxNTM4ODc@._V1_FMjpg_UY457_.jpg",
   "banner": "https://flxt.tmsimg.com/assets/p22972321_v_h10_aa.jpg",
   "classification": "R",
   "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663c56feaae258b932e4be9d"
+  },
+  "name": "Oppenheimer",
+  "rating": 8.3,
+  "genre": [
+    "Biography, History, Drama"
+  ],
+  "director": "Christopher Nolan",
+  "writer": " Christopher Nolan, Kai Bird, Martin Sherwin",
+  "cast": [
+    "Cillian Murphy, Emily Blunt, Matt Damon"
+  ],
+  "release": "2023-07-21",
+  "runtime": 180,
+  "best_movie": true,
+  "best_serie": false,
+  "premier_movie": true,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_FMjpg_UY3454_.jpg",
+  "banner": "https://magazine.culturius.com/wp-content/uploads/2023/07/image-12.png",
+  "classification": "R",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663c5906aae258b932e4beaa"
+  },
+  "name": "X-Men '97",
+  "rating": 9,
+  "genre": [
+    "Action, Adventure, Sci-Fi, Animation"
+  ],
+  "director": "Beau DeMayo",
+  "writer": "Stan Lee, Jack Kirby, Beau DeMayo",
+  "cast": [
+    "Cal Dodd, George Buza, Holly Chou"
+  ],
+  "release": "2024-03-20",
+  "runtime": 22,
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BNDU3ZTU4NTctNGIyOC00ZDgxLTliZWEtNDg0ZmNjMGE4YjU1XkEyXkFqcGdeQXVyNjYwMjU3MjA@._V1_.jpg",
+  "banner": "https://deadline.com/wp-content/uploads/2024/03/xmen-97-disney-plus-marvel-animation.jpg",
+  "classification": "TV-PG",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663daafc3ab1b0ccd53735fe"
+  },
+  "name": "Interstellar",
+  "rating": 8.7,
+  "genre": [
+    "Sci-Fi, Adventure, Action"
+  ],
+  "director": "Christopher Nolan",
+  "writer": "Jonathan Nolan, Christopher Nolan",
+  "cast": [
+    " Matthew McConaughey, Anne Hathaway, Jessica Chastain"
+  ],
+  "release": "2016-05-24",
+  "runtime": 165,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://www.wearemoviegeeks.com/wp-content/uploads/10644551_10153228184639832_7414697183486256202_o.jpg",
+  "banner": "https://i.imgur.com/3ZH4ZZ8.jpeg",
+  "classification": "PG-13",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663dabfb3ab1b0ccd5373601"
+  },
+  "name": "Immaculate",
+  "rating": 5.9,
+  "genre": [
+    "Horror"
+  ],
+  "director": " Michael Mohan",
+  "writer": " Andrew Lobel",
+  "cast": [
+    "Sydney Sweeney, Álvaro Morte, Simona Tabasco"
+  ],
+  "release": "2024-03-22",
+  "runtime": 89,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": true,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BOGYxYzZmZjMtY2U4Ny00YmNmLWI1MzUtZGJjNWJhNmRiMDFjXkEyXkFqcGdeQXVyMTY3ODkyNDkz._V1_.jpg",
+  "banner": "",
+  "classification": "R",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "663dad0e3ab1b0ccd5373605"
+  },
+  "name": "Late Night with the Devil",
+  "rating": 7.1,
+  "genre": [
+    "Horror, Mystery, Thriller"
+  ],
+  "director": "Cameron Cairnes, Colin Cairnes",
+  "writer": " Colin Cairnes, Cameron Cairnes",
+  "cast": [
+    "David Dastmalchian, Laura Gordon, Ian Bliss"
+  ],
+  "release": "2024-03-22",
+  "runtime": 93,
+  "best_movie": true,
+  "best_serie": false,
+  "premier_movie": true,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BYjljZmMwNmEtMjgwYS00YjU2LWEyYTYtZWFlODYzNjhjNzdmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+  "banner": "https://ntvb.tmsimg.com/assets/p25886096_v_h8_aa.jpg?w=1280&h=720",
+  "classification": "R",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663dadd93ab1b0ccd5373607"
+  },
+  "name": "The Idea of You",
+  "rating": 6.5,
+  "genre": [
+    "Romance, Drama, Comedy"
+  ],
+  "director": "Michael Showalter",
+  "writer": "Robinne Lee, Michael Showalter, Jennifer Westfeldt",
+  "cast": [
+    " Anne Hathaway, Nicholas Galitzine, Ella Rubin"
+  ],
+  "release": "2024-05-02",
+  "runtime": 115,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": true,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BYWRkZjJiODEtM2IwZi00ZjM1LWEyOTUtOThjMDk3YThjZDUzXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+  "banner": "",
+  "classification": "R",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "663daffe3ab1b0ccd5373609"
+  },
+  "name": "Star Wars: The Bad Batch",
+  "rating": 7.8,
+  "genre": [
+    "Sci-Fi, Action, Adventure, Animation"
+  ],
+  "director": "Dave Filoni",
+  "writer": " Jennifer Corbett, Dave Filoni",
+  "cast": [
+    " Ming-Na Wen, Dee Bradley Baker, Michelle Ang"
+  ],
+  "release": "2021-05-04",
+  "runtime": 30,
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BZWU5Mjg5ZDctOWZmMi00ZjQ4LTkzYzYtY2FkY2E4YWIxMGNkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+  "banner": "https://lumiere-a.akamaihd.net/v1/images/teaser-poster-gallery_c7a6c31f.jpeg?width=1136",
+  "classification": " TV-PG",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663db18e3ab1b0ccd5373612"
+  },
+  "name": "Breaking Bad",
+  "rating": 9.5,
+  "genre": [
+    "Crime, Drama"
+  ],
+  "director": "Michelle MacLaren, Adam Bernstein, Vince Gilligan",
+  "writer": "Vince Gilligan",
+  "cast": [
+    "Bryan Cranston, Aaron Paul, Anna Gunn"
+  ],
+  "release": "2008-01-20",
+  "runtime": 45,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UY720_.jpg",
+  "banner": "https://i.pinimg.com/originals/26/1e/fb/261efbd9203c7ab3297bae26990ac4e5.jpg",
+  "classification": "TV-14",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663db3263ab1b0ccd5373614"
+  },
+  "name": "The Walking Dead: The Ones Who Live",
+  "rating": 8,
+  "genre": [
+    "Drama, Horror, Sci-Fi"
+  ],
+  "director": "Scott M. Gimple, Danai Gurira, Andrew Lincoln",
+  "writer": "Scott M. Gimple, Danai Gurira, Andrew Lincoln",
+  "cast": [
+    "Andrew Lincoln, Danai Gurira, Pollyanna McIntosh"
+  ],
+  "release": "2024-02-25",
+  "runtime": 60,
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BYjc3YWM3MjctZDAzNy00OWY4LTkwNjMtMWM2YTg1ZWRlMDAwXkEyXkFqcGdeQXVyMTY3MDE5MDY1._V1_FMjpg_UY720_.jpg",
+  "banner": "https://amcnetworks.es/wp-content/uploads/2024/01/KeyArt-H-TWD_THE-ONES-WHO-LIVES_Estreno_V2-jpg.webp",
+  "classification": " TV-MA (V|S|L)",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663db4623ab1b0ccd5373616"
+  },
+  "name": "The Last of Us",
+  "rating": 8.7,
+  "genre": [
+    "Action, Adventure, Drama, Horror"
+  ],
+  "director": "Neil Druckmann, Craig Mazin",
+  "writer": "Neil Druckmann, Craig Mazin",
+  "cast": [
+    "Pedro Pascal, Bella Ramsey"
+  ],
+  "release": "2023-02-15",
+  "runtime": 50,
+  "best_movie": false,
+  "best_serie": true,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg",
+  "banner": "https://img.unocero.com/2022/12/The-Last-of-Us-1-1024x512.jpg",
+  "classification": "TV-MA",
+  "hasBanner": true
+},
+{
+  "_id": {
+    "$oid": "663db5f43ab1b0ccd537361a"
+  },
+  "name": "Monarch: Legacy of Monsters",
+  "rating": 7.1,
+  "genre": [
+    "Action, Adventure, Sci-Fi"
+  ],
+  "director": "Chris Black",
+  "writer": "Chris Black",
+  "cast": [
+    "Anna Sawai, Kiersey Clemons, Ren Watabe"
+  ],
+  "release": "2023-11-17",
+  "runtime": 45,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": true,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BNDk5MzYzZmYtOTFiZi00YmE2LWFjOGUtNjMyODgxNjZiYzRjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX960_.jpg",
+  "banner": "",
+  "classification": "TV-14",
+  "hasBanner": false
 }]

@@ -6,6 +6,10 @@
     font-size: 2vw;
 }
 
+#submit{
+    cursor: pointer;
+}
+
 @media screen and (min-width:1024px) {
     #poster-Container{
         width: 100%;

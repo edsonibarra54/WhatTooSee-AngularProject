@@ -28,10 +28,16 @@ const getProduction = (req = request, res = response) => {
     const objectId = ObjectId.isValid(id) ? new ObjectId(id) : null;
     productions.findById(objectId).then(
         (result) => {
-            res.status(200).json({
-                msg: "profile ola",
-                result
-            });
+             if (result) {
+                res.status(200).json({
+                    msg: "Production found",
+                    production: result
+                });
+            } else {
+                res.status(404).json({
+                    msg: "Production with the provided ID does not exist"
+                });
+            }
         }
     ).catch(
         (error) => {
@@ -94,7 +100,33 @@ const getProductionsByType = (req = request, res = response) => {
                 result: []
             });
         });
-};
+}
+
+const getBannerProductions = (req = request, res = response) => {
+    let query = {};
+    query.hasBanner = true;
+
+    productions.find(query).then(
+        (result) => {
+            if (result.length > 0) {
+                res.status(200).json({
+                    msg: "Productions found",
+                    result
+                });
+                console.log(result);
+            } else {
+                res.status(200).json({
+                    msg: "No productions found for the specified type",
+                    result: []
+                });
+            }
+        }).catch((error) => {
+            res.status(500).json({
+                msg: "Error",
+                result: []
+            });
+        });
+}
 
 const createProduction = (req = request, res = response) => {
     const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, hasBanner, banner, classification } = req.body;
@@ -143,7 +175,7 @@ const createProduction = (req = request, res = response) => {
 }
 
 const deleteProduction = (req = request, res = response) => {
-    const { _id } = req.body;
+    const { name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, hasBanner, banner, classification } = req.body;
 
     const objectId = ObjectId.isValid(_id) ? new ObjectId(_id) : null;
     
@@ -164,11 +196,54 @@ const deleteProduction = (req = request, res = response) => {
     });
 }
 
+const updateProduction = (req = request, res = response) => {
+    const { _id, name, rating, genre, director, writer, cast, release, runtime, best_movie, best_serie, premier_movie, new_serie, type_prod, poster, hasBanner, banner, classification } = req.body;
+    const objectId = ObjectId.isValid(_id) ? new ObjectId(_id) : null;
+
+    const updateFields = {
+        name,
+        rating,
+        genre,
+        director,
+        writer,
+        cast,
+        release,
+        runtime,
+        best_movie,
+        best_serie,
+        premier_movie,
+        new_serie,
+        type_prod,
+        poster,
+        banner,
+        classification,
+        hasBanner
+    }
+
+    productions.updateOne({ _id: objectId }, updateFields).then((result) => {
+        if (result.nModified === 0) {
+            return res.status(404).json({
+                msg: "No se encontró la produccion con el ID proporcionado"
+            });
+        }
+        res.status(200).json({
+            msg: "Produccion actualizado con éxito"
+        });
+    }).catch((error) => {
+        console.error("Error al actualizar el elemento:", error);
+        res.status(500).json({
+            msg: "Error al actualizar el elemento"
+        });
+    });
+}
+
 module.exports = {
     getProductions,
     getProduction,
     getProductionById,
     getProductionsByType,
+    getBannerProductions,
     createProduction,
-    deleteProduction
+    deleteProduction,
+    updateProduction
 }

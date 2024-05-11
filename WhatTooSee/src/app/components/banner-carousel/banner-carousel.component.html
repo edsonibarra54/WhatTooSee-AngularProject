@@ -8,18 +8,20 @@
                 Next
             </button>
         </div>
-        <div class="splide__track" id="splideContainer">
+        <div class="splide__track" id="splideContainer">    
             <ul class="splide__list">
-                <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-1.jpeg"></li>
-                <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-2.jpg"></li>
-                <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-3.jpg"></li>
+                <li class="splide__slide" *ngFor="let production of bannerProductions"><img class="bannerImage" [src]="production.banner"></li>
+                <!--
+                <li class="splide__slide"><img class="bannerImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmnQYpTbDHRZNR5UFMWwBzDR3rMzA3p7330k5NgCarw&s"></li>
+                <li class="splide__slide"><img class="bannerImage" src="https://www.susangranger.com/wp-content/uploads/2023/07/oppy.jpg"></li>
+                <li class="splide__slide"><img class="bannerImage" src="https://deadline.com/wp-content/uploads/2024/03/xmen-97-disney-plus-marvel-animation.jpg"></li>
                 <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-4.jpg"></li>
                 <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-5.jpg"></li>
                 <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-6.jpg"></li>
                 <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-7.jpg"></li>
                 <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-8.jpg"></li>
                 <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-9.jpg"></li>
-                <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-10.jpg"></li>
+                <li class="splide__slide"><img class="bannerImage" src="../../../assets/Image-10.jpg"></li>-->
             </ul>
         </div>
         <ul class="splide__pagination"></ul>

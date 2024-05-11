@@ -45,9 +45,19 @@ const getCommentsProduction = (req = request, res = response) => {
 const createComment = (req = request, res = response) => {
     const { id_user, id_production, comment, stars } = req.body;
 
-    if(!id_user || !id_production || !comment || !stars){
+    if (!id_user) {
+        res.status(401).json({
+            msg: "Need the user ID"
+        })
+        return;
+    } else if(!id_production) {
+        res.status(404).json({
+            msg: "Production not found"
+        })
+        return;
+    } if (!comment || !stars){
         res.status(400).json({
-            msg: "Faltan datos"
+            msg: "Missing data"
         })
         return;
     }

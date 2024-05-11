@@ -26,14 +26,12 @@ export class ProductionPage {
 
   filterProductions() {
     console.log("Filtering productions");
-    if(this.searchTerm == ""){
-      this.productions = this.productions2;
-    } else {
-      this.filteredProductions = this.productions.filter((production) =>
-        production.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-      );
-      this.productions = this.filteredProductions;
-    }
+    this.productions = this.productions2;
+    
+    this.filteredProductions = this.productions.filter((production) =>
+      production.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+    this.productions = this.filteredProductions;
   }
 
   changeType(type: Number){

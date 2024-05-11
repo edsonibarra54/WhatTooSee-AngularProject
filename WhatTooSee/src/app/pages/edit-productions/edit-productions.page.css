@@ -200,6 +200,30 @@
     input{
         margin: 10px 0 20px 0;
     }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+    }
+    
+    .input-group .text {
+        border-radius: 20px 0 0 20px;
+    }
+    
+    .input-group .get-info-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 10px 0 20px 0;
+    }
+    
+    .input-group .get-info-button:hover {
+        background-color: #0056b3;
+    }
 }
 
 /**************************************************************************************************************/
@@ -382,6 +406,30 @@
         background-color: #fff;
         border-radius: 20px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+    }
+    
+    .input-group .text {
+        border-radius: 20px 0 0 20px;
+    }
+    
+    .input-group .get-info-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 1%;
+    }
+    
+    .input-group .get-info-button:hover {
+        background-color: #0056b3;
     }
 }
 
@@ -570,7 +618,6 @@
         font-size: 1.5vw;
     }
     
-    
     .label{
         font-size: 1.6vw;
     }
@@ -612,5 +659,30 @@
         cursor: pointer;
         background-color: #1c1c1c;
         color: #fff;
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        font-size: 1.5vw;
+    }
+    
+    .input-group .text {
+        border-radius: 20px 0 0 20px;
+    }
+    
+    .input-group .get-info-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 1%;
+    }
+    
+    .input-group .get-info-button:hover {
+        background-color: #0056b3;
     }
 }

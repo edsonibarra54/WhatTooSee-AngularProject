@@ -69,10 +69,12 @@ export class MaterialPage {
     const url = "http://localhost:8080/api/comments/createComment";
     const area = document.getElementById(`text-Comment`) as HTMLTextAreaElement;
 
-    if(this.selectedStarsCount < 1){
-      console.log("Se necesita seleccionar una calificacion")
-    } else if (area.value.length < 1) {
+    if(area.value.length < 1){
       console.log("Se debe colocar un comentario")
+      this.mostrarError("You need to write a review");
+    } else if (this.selectedStarsCount < 1) {
+      console.log("Se necesita seleccionar una calificacion")
+      this.mostrarError("You need to give it a rate");
     } else {
       const commentData = {
         id_user: this.userlog.getData()._id,
@@ -84,9 +86,16 @@ export class MaterialPage {
       this.http.post<any>(url, commentData).subscribe(
         (response) => {
           console.log('Comment submitted successfully:', response);
+          this.fetchProductionCommentsData(this.productionId);
         },
         (error) => {
           console.log('Error submitting comment:', error);
+          if (error.status === 401) {
+            this.mostrarError("You need to be logged");
+            this.redirectToLogin()
+          } else {
+            this.mostrarError("Error submitting comment");
+          }
         }
       );
     }
@@ -108,5 +117,49 @@ export class MaterialPage {
         stars[i].style.color = "";
       }
     }
+  }
+
+  mostrarExito(msg: string) {
+    var mensajeError = document.createElement("div");
+    mensajeError.textContent = msg;
+    mensajeError.style.backgroundColor = "#02BB86";
+    mensajeError.style.color = "white";
+    mensajeError.style.padding = "15px";
+    mensajeError.style.position = "fixed";
+    mensajeError.style.top = "20px";
+    mensajeError.style.left = "50%";
+    mensajeError.style.transform = "translateX(-50%)";
+    mensajeError.style.borderRadius = "5px";
+    mensajeError.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
+    mensajeError.style.zIndex = "9999";
+    document.body.appendChild(mensajeError);
+  
+    setTimeout(function() {
+      document.body.removeChild(mensajeError);
+    }, 3000);
+  }
+
+  mostrarError(msg: string) {
+    var mensajeError = document.createElement("div");
+    mensajeError.textContent = msg;
+    mensajeError.style.backgroundColor = "red";
+    mensajeError.style.color = "white";
+    mensajeError.style.padding = "10px";
+    mensajeError.style.position = "fixed";
+    mensajeError.style.top = "20px";
+    mensajeError.style.left = "50%";
+    mensajeError.style.transform = "translateX(-50%)";
+    mensajeError.style.borderRadius = "5px";
+    mensajeError.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
+    mensajeError.style.zIndex = "9999";
+    document.body.appendChild(mensajeError);
+  
+    setTimeout(function() {
+      document.body.removeChild(mensajeError);
+    }, 3000); 
+  }
+
+  redirectToLogin(): void {
+    this.router.navigate(['/login']);
   }
 }
