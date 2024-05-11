@@ -52,7 +52,8 @@
   "new_serie": true,
   "type_prod": 2,
   "poster": "https://m.media-amazon.com/images/M/MV5BYjc3MWNjMGMtNzljZi00NDk4LWIxMzEtMzcwYTgyNzY5YjZjXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX604_.jpg",
-  "banner": "https://m.media-amazon.com/images/M/MV5BZTIzOGYyZWItYzc5Mi00MjY3LWJjMTctMTczNWMyMGVhYmQzXkEyXkFqcGdeQXVyMzc1OTkzMTU@._V1_FMjpg_UX1280_.jpg"
+  "banner": "",
+  "hasBanner": false
 },
 {
   "_id": {
