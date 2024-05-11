@@ -31,12 +31,6 @@ export class HomePage {
         if (response) {
           this.productions = response.result;
           this.classifyProductions();
-          /*
-          console.log(this.bestMovies);
-          console.log(this.premiereMovies);
-          console.log(this.bestSeries);
-          console.log(this.newSeries);
-          */
           this.productionsClassified = true;
         } else {
           this.productions = [];

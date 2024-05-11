@@ -12,6 +12,7 @@ class Server{
         this.profilePath = "/api/users";
         this.commentsPath = "/api/comments";
         this.productionsPath = "/api/productions";
+        this.authPath = "/api/auth";
 
         this.middlewares();
         this.routes();
@@ -24,11 +25,12 @@ class Server{
         this.app.use(this.profilePath, require("../routes/users"));
         this.app.use(this.commentsPath, require("../routes/comments"));
         this.app.use(this.productionsPath, require("../routes/productions"));
+        this.app.use(this.authPath, require("../routes/auth"));
     }
 
     listen(){
         this.app.listen(this.port, () =>{
-            console.log('Servidor corriendo en el puerto: ${this.port}');
+            console.log(`Servidor corriendo en el puerto: ${this.port}`);
         })
     }
 
