@@ -9,7 +9,8 @@
   "description": "¡Hola! Soy el usuario 1.",
   "follow": 0,
   "followers": 0,
-  "is_admin": 0
+  "is_admin": 0,
+  "following": []
 },
 {
   "_id": {
@@ -34,8 +35,9 @@
   "photo": "https://th.bing.com/th/id/OIP.RY5Oi1h88crr20JCwDkapgHaLH?w=198&h=297&c=7&r=0&o=5&pid=1.7",
   "description": "¡Hola! Soy el usuario 3.",
   "follow": 0,
-  "followers": 0,
-  "is_admin": 0
+  "followers": 1,
+  "is_admin": 0,
+  "following": []
 },
 {
   "_id": {
@@ -47,8 +49,9 @@
   "photo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5TRT5o2zoHv5DtuPNLYtujQCAr4uUu6dDkti73vHfUjtFUdOLO7qu639VOX_ZXcaFb4ASa12u0OLlG9MP_KUCY-hv2CMI4WTRLuA2lLVYgryl3ot86x_VKaSf87_5o8kfgoDuHIFQFRm45KuE--KBK1VACLuD4doOvWv1dujJQDEpnpQC3w/s512/00015-2782668338-Highly%20detailed%20portrait%20of%20eldm,%20stephen%20bliss,%20unreal%20engine,%20fantasy%20art%20by%20greg%20rutkowski,%20loish,%20rhads,%20ferdinand%20knab,%20mak.png",
   "description": "¡Hola! Soy el usuario 2.",
   "follow": 0,
-  "followers": 0,
-  "is_admin": 0
+  "followers": 1,
+  "is_admin": 0,
+  "following": []
 },
 {
   "_id": {
@@ -62,4 +65,35 @@
   "follow": 0,
   "followers": 0,
   "is_admin": 1
+},
+{
+  "_id": {
+    "$oid": "6642283d4651ecb1344a4273"
+  },
+  "email": "ritastyles@gmail.com",
+  "username": "esposadeharrystyles",
+  "password": "lolaesbonita",
+  "photo": "https://media.vogue.es/photos/5f350012bd28f824f895f5d0/4:3/w_1736,h_1302,c_limit/Taylor-Swift-vogue-110820-credit-Beth-Garrabrant.jpg",
+  "description": "Soy ama y mujer de Harry Styles",
+  "follow": 2,
+  "followers": 0,
+  "is_admin": 0,
+  "following": [
+    "662aefb985e8bdc4b52031e5",
+    "662d83c99ee31722933e41f1"
+  ]
+},
+{
+  "_id": {
+    "$oid": "664238484651ecb1344a4314"
+  },
+  "email": "franco@gmail.com",
+  "username": "Frankovych",
+  "password": "1234",
+  "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCBZNzX3stNo3MlHYc9fnpNpFHS9GRkzKiCiyK4vT8Q&s",
+  "description": "I like movies",
+  "follow": 0,
+  "followers": 0,
+  "is_admin": 0,
+  "following": []
 }]

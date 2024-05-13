@@ -62,7 +62,7 @@ export class ProductionPage {
       this.fetchProductionsData();
       console.log("Se debe hacer fetch a comedia");
     } else if (type == 4) {
-      this.currentFilter = "Romantic";
+      this.currentFilter = "Romance";
       this.fetchProductionsData();
       console.log("Se debe hacer fetch a romantico");
     } else if (type == 5) {

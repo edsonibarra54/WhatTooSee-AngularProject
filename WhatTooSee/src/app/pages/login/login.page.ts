@@ -131,6 +131,9 @@ export class LoginPage implements OnInit, OnDestroy {
 
   registerUser(username: string, email: string, password: string): void {
     const url = "http://localhost:8080/api/users/registerUser";
+
+    if (username.length > 20){return;}
+
     this.http.post(url, { username: username, email: email, password: password }).subscribe({
       next: (response: any) => {
         console.log('Usuario insertado con éxito', response);

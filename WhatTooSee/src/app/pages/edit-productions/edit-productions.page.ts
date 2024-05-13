@@ -71,6 +71,10 @@ export class EditProductionsPage {
     this.updateProductionNewSerie = false;
   }
 
+  splitText(text: string): string[] {
+    return text.split(',').map(genre => genre.trim());
+  }
+
   public onClickCreate(): void {
     console.log("Creando Pelicula/Serie");
     const url = "http://localhost:8080/api/productions/createProduction";
@@ -101,7 +105,7 @@ export class EditProductionsPage {
     const productionData = {
       name: this.newProductionName,
       rating: this.newProductionRating,
-      genre: this.newProductionGenre,
+      genre: this.splitText(this.newProductionGenre[0]),
       director: this.newProductionDirector,
       writer: this.newProductionWriter,
       cast: this.newProductionCast,
@@ -282,11 +286,15 @@ export class EditProductionsPage {
       this.updateProductionBanner = "";
     }
 
+    console.log(this.updateProductionGenre);
+    console.log(this.updateProductionGenre);
+    console.log(this.splitText(this.updateProductionGenre[0]));
+
     const productionData = {
       _id: this.updateStaticProductionID,
       name: this.updateProductionName,
       rating: this.updateProductionRating,
-      genre: this.updateProductionGenre,
+      genre: this.splitText(this.updateProductionGenre[0]),
       director: this.updateProductionDirector,
       writer: this.updateProductionWriter,
       cast: this.updateProductionCast,

@@ -90,7 +90,8 @@
   "name": "Adventure Time: Fionna and Cake",
   "rating": 9.6,
   "genre": [
-    "Adventure, Comedy"
+    "Adventure",
+    "Comedy"
   ],
   "director": "Adam Muto",
   "writer": "Adam Muto",
@@ -116,7 +117,8 @@
   "name": "Killers of the Flower Moon",
   "rating": 7.6,
   "genre": [
-    "Crime, Drama"
+    "Crime",
+    "Drama"
   ],
   "director": "Martin Scorsese",
   "writer": "Eric Roth, Martin Scorsese",
@@ -142,7 +144,9 @@
   "name": "Oppenheimer",
   "rating": 8.3,
   "genre": [
-    "Biography, History, Drama"
+    "Biography",
+    "History",
+    "Drama"
   ],
   "director": "Christopher Nolan",
   "writer": " Christopher Nolan, Kai Bird, Martin Sherwin",
@@ -168,7 +172,10 @@
   "name": "X-Men '97",
   "rating": 9,
   "genre": [
-    "Action, Adventure, Sci-Fi, Animation"
+    "Action",
+    "Adventure",
+    "Sci-Fi",
+    "Animation"
   ],
   "director": "Beau DeMayo",
   "writer": "Stan Lee, Jack Kirby, Beau DeMayo",
@@ -194,7 +201,9 @@
   "name": "Interstellar",
   "rating": 8.7,
   "genre": [
-    "Sci-Fi, Adventure, Action"
+    "Sci-Fi",
+    "Adventure",
+    "Action"
   ],
   "director": "Christopher Nolan",
   "writer": "Jonathan Nolan, Christopher Nolan",
@@ -246,7 +255,9 @@
   "name": "Late Night with the Devil",
   "rating": 7.1,
   "genre": [
-    "Horror, Mystery, Thriller"
+    "Horror",
+    "Mystery",
+    "Thriller"
   ],
   "director": "Cameron Cairnes, Colin Cairnes",
   "writer": " Colin Cairnes, Cameron Cairnes",
@@ -272,7 +283,9 @@
   "name": "The Idea of You",
   "rating": 6.5,
   "genre": [
-    "Romance, Drama, Comedy"
+    "Romance",
+    "Drama",
+    "Comedy"
   ],
   "director": "Michael Showalter",
   "writer": "Robinne Lee, Michael Showalter, Jennifer Westfeldt",
@@ -298,7 +311,10 @@
   "name": "Star Wars: The Bad Batch",
   "rating": 7.8,
   "genre": [
-    "Sci-Fi, Action, Adventure, Animation"
+    "Sci-Fi",
+    "Action",
+    "Adventure",
+    "Animation"
   ],
   "director": "Dave Filoni",
   "writer": " Jennifer Corbett, Dave Filoni",
@@ -324,7 +340,8 @@
   "name": "Breaking Bad",
   "rating": 9.5,
   "genre": [
-    "Crime, Drama"
+    "Crime",
+    "Drama"
   ],
   "director": "Michelle MacLaren, Adam Bernstein, Vince Gilligan",
   "writer": "Vince Gilligan",
@@ -350,7 +367,9 @@
   "name": "The Walking Dead: The Ones Who Live",
   "rating": 8,
   "genre": [
-    "Drama, Horror, Sci-Fi"
+    "Drama",
+    "Horror",
+    "Sci-Fi"
   ],
   "director": "Scott M. Gimple, Danai Gurira, Andrew Lincoln",
   "writer": "Scott M. Gimple, Danai Gurira, Andrew Lincoln",
@@ -376,7 +395,10 @@
   "name": "The Last of Us",
   "rating": 8.7,
   "genre": [
-    "Action, Adventure, Drama, Horror"
+    "Action",
+    "Adventure",
+    "Drama",
+    "Horror"
   ],
   "director": "Neil Druckmann, Craig Mazin",
   "writer": "Neil Druckmann, Craig Mazin",
@@ -402,7 +424,9 @@
   "name": "Monarch: Legacy of Monsters",
   "rating": 7.1,
   "genre": [
-    "Action, Adventure, Sci-Fi"
+    "Action",
+    "Adventure",
+    "Sci-Fi"
   ],
   "director": "Chris Black",
   "writer": "Chris Black",
@@ -428,7 +452,8 @@
   "name": "Chernobyl",
   "rating": 9.3,
   "genre": [
-    "History, Drama"
+    "History",
+    "Drama"
   ],
   "director": " Johan Renck",
   "writer": " Craig Mazin",
@@ -454,7 +479,8 @@
   "name": "Los Soprano",
   "rating": 9.2,
   "genre": [
-    "Crime, Drama"
+    "Crime",
+    "Drama"
   ],
   "director": " Timothy Van Patten, John Patterson, Allen Coulter",
   "writer": "David Chase",
@@ -480,7 +506,9 @@
   "name": "Arcane",
   "rating": 9,
   "genre": [
-    "Adventure, Fantasy, Animation"
+    "Adventure",
+    "Fantasy",
+    "Animation"
   ],
   "director": " Alex Yee, Christian Linke",
   "writer": " Alex Yee, Christian Linke",
@@ -506,7 +534,9 @@
   "name": "Gravity Falls",
   "rating": 8.9,
   "genre": [
-    " Kids & Family, Comedy, Animation"
+    " Kids & Family",
+    "Comedy",
+    "Animation"
   ],
   "director": " Alex Hirsch",
   "writer": " Alex Hirsch",
