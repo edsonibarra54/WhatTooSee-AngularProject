@@ -420,4 +420,212 @@
   "banner": "",
   "classification": "TV-14",
   "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "6641918c6905aff42515e72d"
+  },
+  "name": "Chernobyl",
+  "rating": 9.3,
+  "genre": [
+    "History, Drama"
+  ],
+  "director": " Johan Renck",
+  "writer": " Craig Mazin",
+  "cast": [
+    "Jessie BuckleyJared HarrisStellan Skarsgård"
+  ],
+  "release": "2019-05-06",
+  "runtime": 41,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BNTdkN2QwMDItMDVhNS00ZjFiLWEzNTctMzY5ODQzYWNkMDllXkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UY576_.jpg",
+  "banner": "",
+  "classification": "TV-MA",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "664192766905aff42515e72f"
+  },
+  "name": "Los Soprano",
+  "rating": 9.2,
+  "genre": [
+    "Crime, Drama"
+  ],
+  "director": " Timothy Van Patten, John Patterson, Allen Coulter",
+  "writer": "David Chase",
+  "cast": [
+    " James Gandolfini, Lorraine Bracco, Edie Falco"
+  ],
+  "release": "1999-01-10",
+  "runtime": 60,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BNWMzZTJmYjktMWU3My00NWZjLWI1NTAtODAzZjQwZDI1MGZhXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg",
+  "banner": "",
+  "classification": " TV-MA",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "6641932b6905aff42515e731"
+  },
+  "name": "Arcane",
+  "rating": 9,
+  "genre": [
+    "Adventure, Fantasy, Animation"
+  ],
+  "director": " Alex Yee, Christian Linke",
+  "writer": " Alex Yee, Christian Linke",
+  "cast": [
+    "Hailee Steinfeld, Kevin Alejandro, Jason Spisak"
+  ],
+  "release": "2021-11-06",
+  "runtime": 40,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 2,
+  "poster": "https://m.media-amazon.com/images/M/MV5BYmRiNzY5MjEtZWI1OC00M2Y4LWIwOWMtYzliMTYwOGE3MjkyXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_FMjpg_UY474_.jpg",
+  "banner": "",
+  "classification": " TV-14",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "664194296905aff42515e733"
+  },
+  "name": "Gravity Falls",
+  "rating": 8.9,
+  "genre": [
+    " Kids & Family, Comedy, Animation"
+  ],
+  "director": " Alex Hirsch",
+  "writer": " Alex Hirsch",
+  "cast": [
+    "Jason Ritter, Alex Hirsch, Kristen Schaal"
+  ],
+  "release": "2012-06-15",
+  "runtime": 23,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 2,
+  "poster": "https://pics.filmaffinity.com/Gravity_Falls_Serie_de_TV-520037458-large.jpg",
+  "banner": "",
+  "classification": "TV-Y7",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "664196006905aff42515e73a"
+  },
+  "name": "Saving Private Ryan",
+  "rating": 8.6,
+  "genre": [
+    "War, History, Drama"
+  ],
+  "director": " Steven Spielberg",
+  "writer": "Robert Rodat",
+  "cast": [
+    "Tom Hanks, Matt Damon, Tom Sizemore"
+  ],
+  "release": "2016-05-27",
+  "runtime": 169,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_FMjpg_UY337_.jpg",
+  "banner": "",
+  "classification": "R",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "664196d06905aff42515e73c"
+  },
+  "name": "WALL-E",
+  "rating": 8.4,
+  "genre": [
+    " Kids & Family, Adventure, Sci-Fi, Comedy, Animation"
+  ],
+  "director": " Andrew Stanton",
+  "writer": " Andrew Stanton, Jim Reardon",
+  "cast": [
+    "Ben Burtt, Elissa Knight, Jeff Garlin"
+  ],
+  "release": "2008-01-27",
+  "runtime": 98,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_FMjpg_UY474_.jpg",
+  "banner": "",
+  "classification": "G",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "664197846905aff42515e73e"
+  },
+  "name": "Toy Story 3",
+  "rating": 8.3,
+  "genre": [
+    " Kids & Family, Comedy, Adventure, Fantasy, Animation"
+  ],
+  "director": "Lee Unkrich",
+  "writer": " Michael Arndt",
+  "cast": [
+    "Tom Hanks, Tim Allen, Joan Cusack"
+  ],
+  "release": "2010-06-01",
+  "runtime": 102,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_FMjpg_UY678_.jpg",
+  "banner": "",
+  "classification": " G",
+  "hasBanner": false
+},
+{
+  "_id": {
+    "$oid": "664198456905aff42515e740"
+  },
+  "name": "1917",
+  "rating": 8.2,
+  "genre": [
+    " War, History, Drama"
+  ],
+  "director": " Sam Mendes",
+  "writer": "Sam Mendes, Krysty Wilson-Cairns",
+  "cast": [
+    "George MacKay, Dean-Charles Chapman, Mark Strong"
+  ],
+  "release": "2019-01-10",
+  "runtime": 119,
+  "best_movie": false,
+  "best_serie": false,
+  "premier_movie": false,
+  "new_serie": false,
+  "type_prod": 1,
+  "poster": "https://m.media-amazon.com/images/M/MV5BZGQ0OGJiZWEtZWE4NS00NWU3LThiM2QtYzdmMjhhZGM1MjBhXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_FMjpg_UX729_.jpg",
+  "banner": "",
+  "classification": "R",
+  "hasBanner": false
 }]
