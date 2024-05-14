@@ -15,10 +15,10 @@ router.get("/getProductionsByType", getProductionsByType);
 
 router.get("/getBannerProductions", getBannerProductions);
 
-router.post("/createProduction", [validateJWT], [verifyAdminRole], createProduction);
+router.post("/createProduction", [validateJWT, verifyAdminRole], createProduction);
 
-router.delete("/deleteProduction", [validateJWT], [verifyAdminRole], deleteProduction);
+router.delete("/deleteProduction", [validateJWT, verifyAdminRole], deleteProduction);
 
-router.put("/updateProduction", [validateJWT], [verifyAdminRole], updateProduction)
+router.put("/updateProduction", [validateJWT, verifyAdminRole], updateProduction)
 
 module.exports = router;

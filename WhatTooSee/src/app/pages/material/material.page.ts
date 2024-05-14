@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommentaryBoxComponent } from '../../components/commentary-box/commentary-box.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Production } from '../../interfaces/production.interface';
 import { CommonModule, Location } from '@angular/common';
@@ -81,8 +81,14 @@ export class MaterialPage {
         comment: area.value,
         stars: this.selectedStarsCount
       };
+
+      const token = localStorage.getItem("auth_token") ?? "";
   
-      this.http.post<any>(url, commentData).subscribe(
+      this.http.post<any>(url, commentData, {
+        headers: {
+          "Authorization": token
+        }
+      }).subscribe(
         (response) => {
           this.fetchProductionCommentsData(this.productionId);
           area.value = "";

@@ -124,7 +124,13 @@ export class EditProductionsPage {
       hasBanner: this.newProductionshowBanner
     };
 
-    this.http.post<any>(url, productionData).subscribe(
+    const token = localStorage.getItem("auth_token") ?? "";
+
+    this.http.post<any>(url, productionData, {
+      headers: {
+        "Authorization": token
+      }
+    }).subscribe(
       (response) => {
         console.log('Production added successfully:', response);
         this.mostrarExito("Production added successfuly");
@@ -182,7 +188,13 @@ export class EditProductionsPage {
         id_production: this.deleteProductionID
       }
 
-      this.http.delete<any>(url, { body: production }).subscribe(
+      const token = localStorage.getItem("auth_token") ?? "";
+
+      this.http.delete<any>(url, { 
+        headers: {
+          "Authorization": token
+        },
+        body: production }).subscribe(
         (response) => {
           console.log('Produccion eliminada correctamente:', response);
           this.mostrarExito("Production deleted successfully");
@@ -323,7 +335,13 @@ export class EditProductionsPage {
 
     console.log(productionData);
 
-    this.http.put<any>(url,productionData).subscribe(
+    const token = localStorage.getItem("auth_token") ?? "";
+
+    this.http.put<any>(url, productionData, {
+      headers: {
+        "Authorization": token
+      }
+    }).subscribe(
       (response) => {
         console.log('Production updated successfuly:', response);
         this.mostrarExito("Production updated successfuly");

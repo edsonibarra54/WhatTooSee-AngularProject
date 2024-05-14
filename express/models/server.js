@@ -21,7 +21,6 @@ class Server{
 
     routes(){
 
-        this.app.use(this.usersPath, require("../routes/pruebas"));
         this.app.use(this.profilePath, require("../routes/users"));
         this.app.use(this.commentsPath, require("../routes/comments"));
         this.app.use(this.productionsPath, require("../routes/productions"));
