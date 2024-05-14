@@ -5,9 +5,9 @@
             <div class="list" id="listMenu">
                 <a routerLink="./production" class="link">Peliculas/Series</a>
                 <a routerLink="./community" class="link">Comunidad</a>
-                <ng-container *ngIf="userlog.getIsLogged(); else notLoggedIn" >
-                    <a [routerLink]="['/profile' , userlog.getData()._id]" class="link">Profile</a>
-                    <a routerLink="./home" class="link" (click)="userlog.cleanUser()">Cerrar Sesion </a>
+                <ng-container *ngIf="authService.isAuthenticated(); else notLoggedIn" >
+                    <a [routerLink]="['/profile' , authService.getIdUser()]" class="link">Profile</a>
+                    <a routerLink="./home" class="link" (click)="authService.cleanData()">Cerrar Sesion </a>
                 </ng-container>
                 <ng-template #notLoggedIn>
                     <a routerLink="./login" class="link"> Iniciar Sesion</a>

@@ -3,8 +3,8 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { loggedUser } from '../../services/singletonuser.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-login',
@@ -60,7 +60,7 @@ export class LoginPage implements OnInit, OnDestroy {
   passwordRegister: string = "";
   userAction: string = "login";
 
-  constructor(private renderer: Renderer2, private router: Router, private http: HttpClient, private loggeduser: loggedUser) { }
+  constructor(private renderer: Renderer2, private router: Router, private http: HttpClient, private authService: AuthService) { }
 
   signIn(): void {
     this.fetchAuthUser(this.email, this.password);
@@ -115,8 +115,7 @@ export class LoginPage implements OnInit, OnDestroy {
     this.http.post<any>(url, loginData).subscribe(
       (response) => {
         if(response) {
-          localStorage.setItem('token', response.token);
-          this.loggeduser.setData(response.result);
+          this.authService.setData(response.token, response.result._id, response.result.is_admin);
           this.navigateToAnotherRoute();
         } else {
           alert("Credenciales incorrectas");

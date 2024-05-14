@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component , Input , OnInit} from '@angular/core';
 import { Profile } from '../../interfaces/profile-information.interface';
 import { CommonModule } from '@angular/common';
-import { loggedUser } from '../../services/singletonuser.service';
 import { Router , NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { AuthService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-profile-information',
@@ -33,7 +33,7 @@ export class ProfileInformationComponent implements OnInit{
     following: []
   };
 
-  constructor(private router: Router, private http : HttpClient, public userlog: loggedUser) { 
+  constructor(private router: Router, private http : HttpClient, public authService: AuthService) { 
   }
   
   ngOnInit(): void {
@@ -43,19 +43,20 @@ export class ProfileInformationComponent implements OnInit{
 
   toggleFollow(): void {
     let tmpArray:string[];
-    if (!this.user || !this.userlog.getIsLogged()) {
+    if (!this.user || !this.authService.isAuthenticated()) {
       return;
     }
+    const userId = this.authService.getIdUser();
     if (this.isFollowing) {
       tmpArray = this.tmpUser.following.filter(cadena => cadena !== this.user!._id);
       console.log(tmpArray);
-      this.updateFollowing(tmpArray, this.userlog.getData()._id);
+      if (userId !== null) {this.updateFollowing(tmpArray, userId);} else return;
       this.updateFollowers(-1, this.user!._id);
       this.user!.followers = this.user!.followers-1;
     } else {
       tmpArray = this.tmpUser.following;
       tmpArray.push(this.user._id);
-      this.updateFollowing(tmpArray, this.userlog.getData()._id);
+      if (userId !== null) {this.updateFollowing(tmpArray, userId);} else return;
       this.updateFollowers(1, this.user!._id);
       this.user!.followers = this.user!.followers+1;
     }
@@ -73,7 +74,7 @@ export class ProfileInformationComponent implements OnInit{
   }
 
   fetchProfileData(): void {
-    const url = "http://localhost:8080/api/users/getUserId?id=" + this.userlog.getData()._id;
+    const url = "http://localhost:8080/api/users/getUserId?id=" + this.authService.getIdUser();
     this.http.get(url).subscribe(
       {
         next: (response: any) =>{

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { loggedUser } from '../../services/singletonuser.service';
+import { AuthService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -13,7 +13,7 @@ import { loggedUser } from '../../services/singletonuser.service';
 
 
 export class EditProfilePage{
-  constructor(private http : HttpClient, public userlog: loggedUser) { 
+  constructor(private http : HttpClient, public authService: AuthService) { 
   }
 
   updateFollowing(username: string, id: string, description: string, photo: string){
@@ -32,8 +32,9 @@ export class EditProfilePage{
     const username = (document.getElementById('username') as HTMLInputElement).value;
     const description = (document.getElementById('description') as HTMLInputElement).value;
     const photo = (document.getElementById('photo') as HTMLInputElement).value;
-    const id = this.userlog.getData()._id;
+    const id = this.authService.getIdUser();
     
-    this.updateFollowing(username, id, description, photo);
+    if(id !== null)
+      this.updateFollowing(username, id, description, photo);
   }
 }

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Production } from '../../interfaces/production.interface';
 import { CommonModule, Location } from '@angular/common';
 import { CommentsUser } from '../../interfaces/comments-user.interface';
-import { loggedUser } from '../../services/singletonuser.service';
+import { AuthService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-material',
@@ -20,7 +20,7 @@ export class MaterialPage {
   production!: Production;
   selectedStarsCount = 0;
 
-  constructor(private router: Router, private http : HttpClient, private location: Location, public userlog: loggedUser) {
+  constructor(private router: Router, private http : HttpClient, private location: Location, public authService: AuthService) {
     const url = this.location.path();
     const segments = url.split('/');
     this.productionId = segments[segments.length - 1];
@@ -76,7 +76,7 @@ export class MaterialPage {
       this.mostrarError("You need to give it a rate");
     } else {
       const commentData = {
-        id_user: this.userlog.getData()._id,
+        id_user: this.authService.getIdUser(),
         id_production: this.productionId,
         comment: area.value,
         stars: this.selectedStarsCount

@@ -1,2 +1,5 @@
 <app-header *ngIf="!hideHeaderOnLoginPage"></app-header>
 <router-outlet></router-outlet>
+<div class="floating-button" *ngIf="authService.isAdmin() && !hideHeaderOnLoginPage && !hideonEditProduction">
+    <button class="btn" (click)="redirectToEditProductions()">Edit page</button>
+</div>

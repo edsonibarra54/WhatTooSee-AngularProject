@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Profile } from '../../interfaces/profile-information.interface';
 import { Location , CommonModule} from '@angular/common';
 import { CommentsUser } from '../../interfaces/comments-user.interface';
-import { loggedUser } from '../../services/singletonuser.service';
+import { AuthService } from '../../services/authService.service';
 
 @Component({
   selector: 'app-profile',
@@ -22,7 +22,7 @@ export class ProfilePage {
   userId: string;
   mySelf: boolean = false;
 
-  constructor(private router: Router, private http : HttpClient, private location: Location, public userlog: loggedUser) { 
+  constructor(private router: Router, private http : HttpClient, private location: Location, public authService: AuthService) { 
      const url = this.location.path();
      const segments = url.split('/');
      this.userId = segments[segments.length - 1];
@@ -33,10 +33,6 @@ export class ProfilePage {
 
   redirectToEditProfile() {
     this.router.navigateByUrl('/edit-profile');
-  }
-  
-  redirectToEditProductions() {
-    this.router.navigateByUrl('/edit-productions');
   }
   
   fetchProfileData(userId: string): void {
@@ -76,7 +72,7 @@ export class ProfilePage {
   }
 
   getMySelf(): void{
-    if(this.userId == this.userlog.getData()._id){
+    if(this.userId == this.authService.getIdUser()){
       this.mySelf = true;
     } else {
       this.mySelf = false;
