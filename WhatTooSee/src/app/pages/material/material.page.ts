@@ -91,6 +91,7 @@ export class MaterialPage {
           console.log('Error submitting comment:', error);
           if (error.status === 401) {
             this.mostrarError("You need to be logged");
+            this.authService.cleanData();
             this.redirectToLogin()
           } else {
             this.mostrarError("Error submitting comment");

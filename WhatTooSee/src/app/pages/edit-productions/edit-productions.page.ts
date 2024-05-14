@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Production } from '../../interfaces/production.interface';
+import { AuthService } from '../../services/authService.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-productions',
@@ -56,7 +58,7 @@ export class EditProductionsPage {
   public updateProductionshowBanner: boolean = false;
   public updateProductionClassification: string = "";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public authService: AuthService, private router: Router) {
 
   }
 
@@ -148,7 +150,11 @@ export class EditProductionsPage {
       },
       (error) => {
         console.log('Error adding production:', error);
-        if (error.status === 400) {
+        if (error.status === 401) {
+          this.mostrarError("You are not authenticated");
+          this.authService.cleanData();
+          this.redirectToHome();
+        } else if (error.status === 400) {
           this.mostrarError("You need to fill all the inputs");
         } else {
           this.mostrarError("Error adding production");
@@ -195,7 +201,11 @@ export class EditProductionsPage {
         },
         (error) => {
           console.log('Error eliminando show:', error);
-          if (error.status === 404) {
+          if (error.status === 401) {
+            this.mostrarError("You are not authenticated");
+            this.authService.cleanData();
+            this.redirectToHome();
+          } else if (error.status === 404) {
             this.mostrarError("Can't find production");
           } else {
             this.mostrarError("Error deleting production");
@@ -322,7 +332,11 @@ export class EditProductionsPage {
       },
       (error) => {
         console.log('Error updating production:', error);
-        if (error.status === 404) {
+        if (error.status === 401) {
+          this.mostrarError("You are not authenticated");
+          this.authService.cleanData();
+          this.redirectToHome();
+        } else if (error.status === 404) {
           this.mostrarError("Can't find production");
         } else {
           this.mostrarError("Error updating production");
@@ -369,5 +383,9 @@ export class EditProductionsPage {
     setTimeout(function () {
       document.body.removeChild(mensajeError);
     }, 5000);
+  }
+
+  redirectToHome() {
+    this.router.navigateByUrl('/home');
   }
 }

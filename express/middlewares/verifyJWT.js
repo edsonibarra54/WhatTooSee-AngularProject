@@ -6,8 +6,8 @@ const validateJWT = (req = request, res = response, next) => {
     const token = req.header("Authorization");
 
     if (!token) {
-        res.status(404).json({
-            msg: "Token valido:"
+        res.status(401).json({
+            msg: "Token not found"
         })
         return;
     }
